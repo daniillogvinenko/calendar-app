@@ -9,7 +9,12 @@
         "allowJs": true,
         "moduleResolution": "node",
         "allowSyntheticDefaultImports": true,
-        "esModuleInterop": true
+        "esModuleInterop": true,
+        // абсолютные пути
+        "baseUrl": "./src",
+        "paths": {
+            "": ["*"]
+        }
     },
     "ts-node": {
         "compilerOptions": {

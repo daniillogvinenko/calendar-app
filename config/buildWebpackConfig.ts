@@ -1,7 +1,9 @@
 import HtmlWebpackPlugin from "html-webpack-plugin";
-import webpack from "webpack";
+import * as webpack from "webpack";
+import * as webpackDevServer from "webpack-dev-server"; // чтобы было поле devServer
 import { buildLoaders } from "./buildLoaders";
 import { buildConfigOptions } from "./types/types";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 export const buildWebpackConfig = ({
     paths,
@@ -22,12 +24,29 @@ export const buildWebpackConfig = ({
         },
         resolve: {
             extensions: [".tsx", ".ts", ".js"],
+            // абсолютные пути
+            preferAbsolute: true,
+            modules: [paths.src, "node_modules"],
+            mainFiles: ["index"],
+            alias: {},
         },
         plugins: [
             new HtmlWebpackPlugin({
                 template: paths.htmlWebpackPlugin,
             }),
+            // new MiniCssExtractPlugin({
+
+            // }),
+            new webpack.ProgressPlugin(),
         ],
+        devServer:
+            mode === "development"
+                ? {
+                      port: 3000,
+                      open: true,
+                      historyApiFallback: true,
+                  }
+                : undefined,
     };
 
     return config;
