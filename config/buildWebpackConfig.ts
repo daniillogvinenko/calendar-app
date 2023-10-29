@@ -1,9 +1,9 @@
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import * as webpack from "webpack";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import * as webpackDevServer from "webpack-dev-server"; // чтобы было поле devServer
 import { buildLoaders } from "./buildLoaders";
-import { buildConfigOptions } from "./types/types";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import type { buildConfigOptions } from "./types/types";
 
 export const buildWebpackConfig = ({
     paths,
@@ -20,7 +20,7 @@ export const buildWebpackConfig = ({
             clean: true,
         },
         module: {
-            rules: buildLoaders(),
+            rules: buildLoaders({ mode }),
         },
         resolve: {
             extensions: [".tsx", ".ts", ".js"],

@@ -15,12 +15,14 @@
         }
     },
     "rules": {
+        "@typescript-eslint/indent": "off",
         "@typescript-eslint/prefer-nullish-coalescing": "off",
         "@typescript-eslint/quotes": "off",
         "@typescript-eslint/semi": "off",
         "react/react-in-jsx-scope": "off",
         "@typescript-eslint/strict-boolean-expressions": "off",
-        "@typescript-eslint/indent": [2, 4],
-        "@typescript-eslint/explicit-function-return-type": "off"
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/comma-dangle": "off",
+        "@typescript-eslint/member-delimiter-style": "off"
     }
 }

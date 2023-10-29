@@ -1,6 +1,8 @@
-@import './reset.scss';
+@import './reset';
+@import './variables/global';
+@import './themes/light';
+@import './themes/dark.scss';
 
-a {
-    align-self: start;
-    height: 30px;
+body {
+    background-color: var(--bg-color);
 }

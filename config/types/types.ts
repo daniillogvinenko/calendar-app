@@ -7,6 +7,10 @@ export interface buildConfigOptions {
     paths: buildConfigPaths;
 }
 
+export interface buildLoadersOptions {
+    mode: "production" | "development";
+}
+
 export interface buildConfigPaths {
     entry: string;
     output: string;
