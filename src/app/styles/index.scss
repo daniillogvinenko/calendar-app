@@ -1,1 +1,6 @@
-@import url('./reset.scss');
+@import './reset.scss';
+
+a {
+    align-self: start;
+    height: 30px;
+}
