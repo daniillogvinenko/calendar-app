@@ -1,0 +1,90 @@
+{
+    "dates": [
+        {
+            "id": 81,
+            "dateDay": "30",
+            "dateMonth": "10",
+            "dateYear": "2023",
+            "dateWeekday": "Monday"
+        },
+        {
+            "id": 82,
+            "dateDay": "31",
+            "dateMonth": "10",
+            "dateYear": "2023",
+            "dateWeekday": "Tuesday"
+        },
+        {
+            "id": 83,
+            "dateDay": "1",
+            "dateMonth": "11",
+            "dateYear": "2023",
+            "dateWeekday": "Wednesday"
+        },
+        {
+            "id": 84,
+            "dateDay": "2",
+            "dateMonth": "11",
+            "dateYear": "2023",
+            "dateWeekday": "Thursday"
+        },
+        {
+            "id": 85,
+            "dateDay": "3",
+            "dateMonth": "11",
+            "dateYear": "2023",
+            "dateWeekday": "Friday"
+        },
+        {
+            "id": 86,
+            "dateDay": "4",
+            "dateMonth": "11",
+            "dateYear": "2023",
+            "dateWeekday": "Saturday"
+        },
+        {
+            "id": 87,
+            "dateDay": "5",
+            "dateMonth": "11",
+            "dateYear": "2023",
+            "dateWeekday": "Sunday"
+        },
+        {
+            "id": 88,
+            "dateDay": "6",
+            "dateMonth": "11",
+            "dateYear": "2023",
+            "dateWeekday": "Monday"
+        },
+        {
+            "id": 89,
+            "dateDay": "7",
+            "dateMonth": "11",
+            "dateYear": "2023",
+            "dateWeekday": "Tuesday"
+        }
+    ],
+    "tasks": [
+        {
+            "id": 1,
+            "taskText": "To do something",
+            "taskTimeFrom": "1130",
+            "taskTimeTo": "1300",
+            "dateId": 82
+        },
+        {
+            "id": 2,
+            "taskText": "To do something else",
+            "taskTimeFrom": "1330",
+            "taskTimeTo": "",
+            "dateId": 82
+        },
+        {
+            "id": 3,
+            "taskText": "To do something again",
+            "taskTimeFrom": "1000",
+            "taskTimeTo": "1200",
+            "dateId": 83
+        }
+    ]
+}

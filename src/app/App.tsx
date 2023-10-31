@@ -1,5 +1,10 @@
+import { Navbar } from "widgets/Navbar";
 import classes from "./App.module.scss";
 
 export const App = () => {
-    return <div className={"app_light " + classes.app}>App</div>;
+    return (
+        <div className={classes.app}>
+            <Navbar />
+        </div>
+    );
 };

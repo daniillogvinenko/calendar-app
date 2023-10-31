@@ -37,6 +37,9 @@ export const buildWebpackConfig = ({
             // new MiniCssExtractPlugin({
 
             // }),
+            new webpack.DefinePlugin({
+                _IS_DEV_: Boolean(mode === "development"),
+            }),
             new webpack.ProgressPlugin(),
         ],
         devServer:

@@ -1,5 +1,5 @@
 import path from "path";
-import { EnvironmentalVariables, buildConfigPaths } from "./config/types/types";
+import type { EnvironmentalVariables } from "./config/types/types";
 import { buildWebpackConfig } from "./config/buildWebpackConfig";
 
 export default (env: EnvironmentalVariables) => {

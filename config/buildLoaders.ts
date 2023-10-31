@@ -34,7 +34,7 @@ export const buildLoaders = ({
             ],
         },
         {
-            test: /\.(png|jpe?g|gif)$/i,
+            test: /\.(png|jpe?g|gif|ttf)$/i,
             use: [
                 {
                     loader: "file-loader",
