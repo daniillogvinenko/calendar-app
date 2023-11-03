@@ -13,9 +13,7 @@
         "ecmaVersion": "latest",
         "sourceType": "module"
     },
-    "plugins": [
-        "react"
-    ],
+    "plugins": ["react", "i18next"],
     "settings": {
         "react": {
             "version": "detect"
