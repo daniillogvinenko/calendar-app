@@ -10,6 +10,8 @@ body {
 }
 
 .container {
-    max-width: 1290px;
+    // container = 1290px, прибавляем по 30px (паддинги с каждой стороны)
+    max-width: 1350px;
+    padding: 0 30px;
     margin: 0 auto;
 }

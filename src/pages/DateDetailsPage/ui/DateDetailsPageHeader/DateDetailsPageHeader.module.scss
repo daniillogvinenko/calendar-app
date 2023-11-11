@@ -1,0 +1,22 @@
+.DateDetailsPageHeader {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 50px;
+}
+
+.flex {
+    opacity: 0;
+}
+
+.gobackBtn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.gobackBtn path {
+    fill: var(--bg-color);
+    stroke: var(--header-text);
+}

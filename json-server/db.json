@@ -5,63 +5,63 @@
             "dateDay": "30",
             "dateMonth": "10",
             "dateYear": "2023",
-            "dateWeekday": "Monday"
+            "dateWeekday": "1"
         },
         {
             "id": 82,
             "dateDay": "31",
             "dateMonth": "10",
             "dateYear": "2023",
-            "dateWeekday": "Tuesday"
+            "dateWeekday": "2"
         },
         {
             "id": 83,
             "dateDay": "1",
             "dateMonth": "11",
             "dateYear": "2023",
-            "dateWeekday": "Wednesday"
+            "dateWeekday": "3"
         },
         {
             "id": 84,
             "dateDay": "2",
             "dateMonth": "11",
             "dateYear": "2023",
-            "dateWeekday": "Thursday"
+            "dateWeekday": "4"
         },
         {
             "id": 85,
             "dateDay": "3",
             "dateMonth": "11",
             "dateYear": "2023",
-            "dateWeekday": "Friday"
+            "dateWeekday": "5"
         },
         {
             "id": 86,
             "dateDay": "4",
             "dateMonth": "11",
             "dateYear": "2023",
-            "dateWeekday": "Saturday"
+            "dateWeekday": "6"
         },
         {
             "id": 87,
             "dateDay": "5",
             "dateMonth": "11",
             "dateYear": "2023",
-            "dateWeekday": "Sunday"
+            "dateWeekday": "0"
         },
         {
             "id": 88,
             "dateDay": "6",
             "dateMonth": "11",
             "dateYear": "2023",
-            "dateWeekday": "Monday"
+            "dateWeekday": "1"
         },
         {
             "id": 89,
             "dateDay": "7",
             "dateMonth": "11",
             "dateYear": "2023",
-            "dateWeekday": "Tuesday"
+            "dateWeekday": "2"
         }
     ],
     "tasks": [
