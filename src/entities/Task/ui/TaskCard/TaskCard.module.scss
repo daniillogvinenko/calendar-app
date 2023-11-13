@@ -1,0 +1,57 @@
+.TaskCard {
+    // border: 1px solid #ff0000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 740px;
+    margin: 0 auto 25px;
+    color: var(--bg-color);
+}
+
+.content {
+    // border: 1px solid rgb(0, 255, 0);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 630px;
+    background-color: var(--main-color);
+    padding: 22px 40px;
+    box-shadow: 0px 4px 9px 0px var(--task-card-shadow);
+    border-radius: 52px;
+}
+
+.selectButton {
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    border: 4px solid var(--header-text);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.selectButton:hover {
+    background-color: var(--header-text);
+}
+
+.selected .selectButton {
+    background-color: var(--accent-color);
+}
+
+.selected .content {
+    background-color: var(--main-color-accent);
+    outline: 3px solid var(--accent-color);
+}
+
+.pencilIcon path {
+    fill: var(--header-text);
+}
+
+.time {
+    padding: 6px 26px;
+    border: 2px solid var(--accent-color);
+    font: var(--font-s);
+    border-radius: 23px;
+    box-shadow: 0px 4px 4px 0px var(--task-card-time-shadow);
+}

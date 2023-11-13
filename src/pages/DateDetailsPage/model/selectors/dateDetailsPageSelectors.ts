@@ -8,5 +8,3 @@ export const getDateDetailsPageDate = (state: StateSchema) =>
     state.dateDetailsPage.date;
 export const getDateDetailsPageDateIsLoading = (state: StateSchema) =>
     state.dateDetailsPage.dateIsLoading;
-export const getDateDetailsPageSelectedTasks = (state: StateSchema) =>
-    state.dateDetailsPage.selectedTasks;

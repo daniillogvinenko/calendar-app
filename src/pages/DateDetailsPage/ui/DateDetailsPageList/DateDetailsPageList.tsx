@@ -1,9 +1,8 @@
 import { useSelector } from "react-redux";
-import {
-    getDateDetailsPageSelectedTasks,
-    getDateDetailsPageTasks,
-} from "../../model/selectors/dateDetailsPageSelectors";
+import { getDateDetailsPageTasks } from "../../model/selectors/dateDetailsPageSelectors";
 import classes from "./DateDetailsPageList.module.scss";
+import { TaskCard } from "entities/Task/ui/TaskCard/TaskCard";
+import { useState } from "react";
 
 interface DateDetailsPageListProps {
     id: number;
@@ -11,24 +10,24 @@ interface DateDetailsPageListProps {
 
 export const DateDetailsPageList = (props: DateDetailsPageListProps) => {
     const tasks = useSelector(getDateDetailsPageTasks);
-    const selectedTasks = useSelector(getDateDetailsPageSelectedTasks);
+    const [selectedTasks, setSelectedTasks] = useState<number[]>([]);
 
     if (!tasks.length) return;
 
+    const onChangeSelectedTasks = (newArr: number[]) => {
+        setSelectedTasks(newArr);
+    };
+
     return (
-        <div>
+        <div className={classes.DateDetailsPageList}>
             {tasks.map((task) => {
-                let className = "";
-
-                if (selectedTasks.includes(task.id)) {
-                    className = classes.selected;
-                }
-
                 return (
-                    <div key={task.id} className={className}>
-                        {task.id}. {task.taskText} {task.taskTimeFrom}{" "}
-                        {task.taskTimeTo}
-                    </div>
+                    <TaskCard
+                        selectedTasks={selectedTasks}
+                        setSelectedTasks={onChangeSelectedTasks}
+                        task={task}
+                        key={task.id}
+                    />
                 );
             })}
         </div>

@@ -7,7 +7,6 @@ import { type DateSchema } from "entities/Date";
 const initialState: DateDetailsPageSchema = {
     tasks: [],
     tasksIsLoading: false,
-    selectedTasks: [1],
     date: undefined,
     dateIsLoading: false,
 };
@@ -27,14 +26,6 @@ export const dateDetailsPageSlice = createSlice({
         },
         setDateIsLoading: (state, action: PayloadAction<boolean>) => {
             state.dateIsLoading = action.payload;
-        },
-        addSelectedTask: (state, action: PayloadAction<number>) => {
-            state.selectedTasks = [...state.selectedTasks, action.payload];
-        },
-        removeSelectedTask: (state, action: PayloadAction<number>) => {
-            state.selectedTasks = state.selectedTasks.filter(
-                (task) => task !== action.payload
-            );
         },
     },
 });

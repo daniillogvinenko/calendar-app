@@ -7,11 +7,11 @@ import {
 } from "../model/selectors/dateDetailsPageSelectors";
 import { DateDetailsPageHeader } from "./DateDetailsPageHeader/DateDetailsPageHeader";
 import { DateDetailsPageList } from "./DateDetailsPageList/DateDetailsPageList";
-import { Loader } from "shared/ui/Loader/Loader";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useEffect } from "react";
 import { fetchTasksByDateId } from "../model/services/fetchTasksById/fetchTasksByDateId";
 import { fetchDateById } from "../model/services/fetchDateById/fetchDateById";
+import { Skeleton } from "shared/ui/Skeleton/Skeleton";
 
 export const DateDetailsPage = () => {
     const { id } = useParams<{ id: string }>();
@@ -24,7 +24,83 @@ export const DateDetailsPage = () => {
         dispatch(fetchTasksByDateId(+id));
     }, [dispatch, id]);
 
-    if (tasksIsLoading || dateIsLoading) return <Loader />;
+    if (tasksIsLoading || dateIsLoading) {
+        // if (1) {
+        return (
+            <div className={"container"}>
+                <div className={classes.skeleton}>
+                    <Skeleton
+                        styleProp={{
+                            margin: "98px auto 25px",
+                            width: 630,
+                            height: 84,
+                            borderRadius: "52px",
+                        }}
+                    >
+                        <Skeleton
+                            styleProp={{
+                                margin: "28px 0 0 50px",
+                                width: 150,
+                                height: 30,
+                                borderRadius: "5px",
+                            }}
+                        />
+                    </Skeleton>
+                    <Skeleton
+                        styleProp={{
+                            margin: "0 auto 25px",
+                            width: 630,
+                            height: 84,
+                            borderRadius: "52px",
+                        }}
+                    >
+                        <Skeleton
+                            styleProp={{
+                                margin: "28px 0 0 50px",
+                                width: 150,
+                                height: 30,
+                                borderRadius: "5px",
+                            }}
+                        />
+                    </Skeleton>
+                    <Skeleton
+                        styleProp={{
+                            margin: "0 auto 25px",
+                            width: 630,
+                            height: 84,
+                            borderRadius: "52px",
+                        }}
+                    >
+                        <Skeleton
+                            styleProp={{
+                                margin: "28px 0 0 50px",
+                                width: 150,
+                                height: 30,
+                                borderRadius: "5px",
+                            }}
+                        />
+                    </Skeleton>
+                    <Skeleton
+                        styleProp={{
+                            margin: "0 auto 25px",
+                            width: 630,
+                            height: 84,
+                            borderRadius: "52px",
+                        }}
+                    >
+                        <Skeleton
+                            styleProp={{
+                                margin: "28px 0 0 50px",
+                                width: 150,
+                                height: 30,
+                                borderRadius: "5px",
+                            }}
+                        />
+                    </Skeleton>
+                </div>
+            </div>
+        );
+    }
 
     return (
         <div className={classes.DateDetails + " container"}>
