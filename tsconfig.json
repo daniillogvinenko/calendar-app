@@ -14,7 +14,8 @@
         "baseUrl": "./src",
         "paths": {
             "": ["*"]
-        }
+        },
+        "strict": true
     },
     "ts-node": {
         "compilerOptions": {

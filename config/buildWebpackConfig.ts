@@ -3,6 +3,8 @@ import * as webpack from "webpack";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import * as webpackDevServer from "webpack-dev-server"; // чтобы было поле devServer
 import { buildLoaders } from "./buildLoaders";
+import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
+import CircularDependencyPlugin from "circular-dependency-plugin";
 import type { buildConfigOptions } from "./types/types";
 
 export const buildWebpackConfig = ({
@@ -41,6 +43,13 @@ export const buildWebpackConfig = ({
                 _IS_DEV_: Boolean(mode === "development"),
             }),
             new webpack.ProgressPlugin(),
+            new ForkTsCheckerWebpackPlugin({
+                // devServer: true,
+            }),
+            new CircularDependencyPlugin({
+                exclude: /node_modules/,
+                failOnError: true,
+            }),
         ],
         devServer:
             mode === "development"

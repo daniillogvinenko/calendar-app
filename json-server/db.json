@@ -134,20 +134,6 @@
             "taskTimeFrom": "1330",
             "taskTimeTo": "",
             "dateId": 83
-        },
-        {
-            "id": 11,
-            "taskText": "To do something else",
-            "taskTimeFrom": "1330",
-            "taskTimeTo": "",
-            "dateId": 85
-        },
-        {
-            "id": 12,
-            "taskText": "To do something again",
-            "taskTimeFrom": "1000",
-            "taskTimeTo": "1200",
-            "dateId": 85
         }
     ]
 }

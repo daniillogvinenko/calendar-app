@@ -20,8 +20,12 @@ export const DateDetailsPage = () => {
     const dateIsLoading = useSelector(getDateDetailsPageDateIsLoading);
 
     useEffect(() => {
-        dispatch(fetchDateById(+id));
-        dispatch(fetchTasksByDateId(+id));
+        if (id) {
+            dispatch(fetchDateById(+id));
+            dispatch(fetchTasksByDateId(+id));
+        } else {
+            throw new Error("DateDetailsPage id - undefined");
+        }
     }, [dispatch, id]);
 
     if (tasksIsLoading || dateIsLoading) {
@@ -102,10 +106,12 @@ export const DateDetailsPage = () => {
         );
     }
 
+    if (!id) throw new Error("DateDetailsPage id - undefined");
+
     return (
         <div className={classes.DateDetails + " container"}>
             <DateDetailsPageHeader id={+id} />
-            <DateDetailsPageList id={+id} />
+            <DateDetailsPageList />
         </div>
     );
 };

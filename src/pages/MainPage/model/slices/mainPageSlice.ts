@@ -6,6 +6,7 @@ import { type DateSchema } from "entities/Date";
 const initialState: MainPageSchema = {
     dates: [],
     isLoading: false,
+    error: "",
 };
 
 export const mainPageSlice = createSlice({
@@ -17,6 +18,9 @@ export const mainPageSlice = createSlice({
         },
         setIsLoading: (state, action: PayloadAction<boolean>) => {
             state.isLoading = action.payload;
+        },
+        setError: (state, action: PayloadAction<string>) => {
+            state.error = action.payload;
         },
     },
 });

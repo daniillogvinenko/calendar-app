@@ -15,14 +15,16 @@ export const TaskCard = (props: TaskCardProps) => {
     const onSelect = () => {
         if (isSelected) {
             // убираем из массива selectedTasks элемент с нужным id, сортируем
-            setSelectedTasks(
+            setSelectedTasks?.(
                 selectedTasks
                     .filter((item) => item !== task.id)
                     .sort((a, b) => a - b)
             );
         } else {
             // Добавляем в selectedTasks элемент с нужным id, сортируем
-            setSelectedTasks([...selectedTasks, task.id].sort((a, b) => a - b));
+            setSelectedTasks?.(
+                [...selectedTasks, task.id].sort((a, b) => a - b)
+            );
         }
     };
 

@@ -14,7 +14,6 @@ export function fetchDateById(id: number) {
                 dispatch(dateDetailsPageActions.setDateIsLoading(false));
             })
             .catch((value) => {
-                console.log(value);
                 dispatch(dateDetailsPageActions.setDateIsLoading(false));
             });
     };

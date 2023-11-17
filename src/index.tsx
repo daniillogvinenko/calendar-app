@@ -6,7 +6,9 @@ import "shared/config/i18next/u18next";
 import { StoreProvider } from "./app/providers/storeProvider/ui/StoreProvider";
 import { BrowserRouter } from "react-router-dom";
 
-const root = createRoot(document.getElementById("root"));
+const container = document.getElementById("root");
+if (!container) throw new Error("Контейнер не найден");
+const root = createRoot(container);
 root.render(
     <BrowserRouter>
         <StoreProvider>

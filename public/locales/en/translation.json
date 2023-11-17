@@ -20,5 +20,13 @@
     "октября": "October",
     "ноября": "November",
     "декабря": "December",
-    "Назад": "Back"
+    "Назад": "Back",
+    "ПУСТО": "NOTHING HERE",
+    "ПРОИЗОШЛА ОШИБКА ПРИ ЗАГРУЗКЕ ЗАДАЧ :(": "ERROR WHILE LOADING TASKS :(",
+    "ПРОИЗОШЛА ОШИБКА ПРИ ЗАГРУЗКЕ ДАТ :(": "ERROR WHILE LOADING DATES :(",
+    "Введите задачу": "Enter new task",
+    "Время от": "Time from",
+    "Время до": "Time to",
+    "ДОБАВИТЬ": "ADD",
+    "ОТМЕНА": "CANCEL"
 }

@@ -1,0 +1,22 @@
+.Modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: var(--modal-overlay-color);
+    align-items: center;
+    justify-content: center;
+}
+
+.opened {
+    display: flex;
+}
+
+.content {
+    color: var(--modal-font-color);
+    background-color: var(--modal-background-color);
+    border-radius: 20px;
+    padding: 20px;
+}

@@ -5,6 +5,7 @@ import { type DateSchema } from "entities/Date";
 import { mainPageActions } from "../../slices/mainPageSlice";
 
 export function fetchAllDates(dispatch: AppDispatch) {
+    dispatch(mainPageActions.setError(""));
     dispatch(mainPageActions.setIsLoading(true));
     axios
         .get<DateSchema[]>("http://localhost:8000/dates")
@@ -13,7 +14,7 @@ export function fetchAllDates(dispatch: AppDispatch) {
             dispatch(mainPageActions.setIsLoading(false));
         })
         .catch((value) => {
-            console.log(value);
+            dispatch(mainPageActions.setError("Error"));
             dispatch(mainPageActions.setIsLoading(false));
         });
 }

@@ -9,15 +9,17 @@ import { useTranslation } from "react-i18next";
 import { getDateFormat } from "shared/lib/getDateFormat/getDateFormat";
 import { getWeekDay } from "shared/lib/getWeekDay/getWeekDay";
 import {
-    getDates,
+    getMainPageDates,
+    getMainPageError,
     getMainPageIsLoading,
 } from "../model/selectors/mainPageSelectors";
 import { Loader } from "shared/ui/Loader/Loader";
 
 export const MainPage = () => {
     const dispatch = useAppDispatch();
-    const dates = useSelector(getDates);
+    const dates = useSelector(getMainPageDates);
     const isLoading = useSelector(getMainPageIsLoading);
+    const error = useSelector(getMainPageError);
     const { t, i18n } = useTranslation();
 
     useEffect(() => {
@@ -26,6 +28,16 @@ export const MainPage = () => {
 
     if (isLoading) {
         return <Loader className={classes.Loader} />;
+    }
+
+    if (error) {
+        return (
+            <div className={"container"}>
+                <div className={classes.error}>
+                    {t("ПРОИЗОШЛА ОШИБКА ПРИ ЗАГРУЗКЕ ДАТ :(")}
+                </div>
+            </div>
+        );
     }
 
     return (

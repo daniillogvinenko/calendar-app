@@ -1,6 +1,18 @@
 .Loader {
     width: 100px;
     height: 30px;
+
+    .dark {
+        color: black;
+    }
+
+    .light {
+        color: white;
+    }
+
+    .invertedBg {
+        color: var(--header-text);
+    }
 }
 
 .loaderSpan {
@@ -10,7 +22,6 @@
     display: block;
     margin: 15px auto;
     position: relative;
-    color: var(--header-text);
     box-sizing: border-box;
     animation: animloader 2s linear infinite;
 }
