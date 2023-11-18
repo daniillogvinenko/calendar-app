@@ -20,3 +20,11 @@
     border-radius: 20px;
     padding: 20px;
 }
+
+.closeModalButton {
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 20px;
+    margin-left: 100%;
+    transform: translate(-100%, 0);
+}

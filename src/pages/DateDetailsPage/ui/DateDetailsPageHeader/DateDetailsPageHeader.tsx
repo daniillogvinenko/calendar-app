@@ -35,7 +35,7 @@ export const DateDetailsPageHeader = (props: DateDetailsPageHeaderProps) => {
                 </div>
             </AppLink>
 
-            <div>
+            <div className={classes.date}>
                 {getDateFormat(
                     i18n.language as "ru" | "en",
                     +date.dateDay,
@@ -44,7 +44,6 @@ export const DateDetailsPageHeader = (props: DateDetailsPageHeaderProps) => {
                     t(getWeekDay(+date.dateWeekday))
                 )}
             </div>
-            <div className={classes.flex}>Назад</div>
         </div>
     );
 };

@@ -66,74 +66,25 @@
     ],
     "tasks": [
         {
-            "id": 1,
-            "taskText": "To do something",
-            "taskTimeFrom": "1130",
-            "taskTimeTo": "1300",
-            "dateId": 82
+            "taskText": "test",
+            "taskTimeFrom": "1234",
+            "taskTimeTo": "5435",
+            "dateId": 81,
+            "id": 1
         },
         {
-            "id": 2,
-            "taskText": "To do something else",
-            "taskTimeFrom": "1330",
+            "taskText": "test",
+            "taskTimeFrom": "2",
             "taskTimeTo": "",
-            "dateId": 82
+            "dateId": 81,
+            "id": 2
         },
         {
-            "id": 3,
-            "taskText": "To do something else",
-            "taskTimeFrom": "1330",
+            "taskText": "test",
+            "taskTimeFrom": "",
             "taskTimeTo": "",
-            "dateId": 82
-        },
-        {
-            "id": 4,
-            "taskText": "To do something else",
-            "taskTimeFrom": "1330",
-            "taskTimeTo": "",
-            "dateId": 82
-        },
-        {
-            "id": 5,
-            "taskText": "To do something else",
-            "taskTimeFrom": "1330",
-            "taskTimeTo": "",
-            "dateId": 82
-        },
-        {
-            "id": 6,
-            "taskText": "To do something else",
-            "taskTimeFrom": "1330",
-            "taskTimeTo": "",
-            "dateId": 82
-        },
-        {
-            "id": 7,
-            "taskText": "To do something else",
-            "taskTimeFrom": "1330",
-            "taskTimeTo": "",
-            "dateId": 83
-        },
-        {
-            "id": 8,
-            "taskText": "To do something else",
-            "taskTimeFrom": "1330",
-            "taskTimeTo": "",
-            "dateId": 83
-        },
-        {
-            "id": 9,
-            "taskText": "To do something else",
-            "taskTimeFrom": "1330",
-            "taskTimeTo": "",
-            "dateId": 83
-        },
-        {
-            "id": 10,
-            "taskText": "To do something else",
-            "taskTimeFrom": "1330",
-            "taskTimeTo": "",
-            "dateId": 83
+            "dateId": 81,
+            "id": 3
         }
     ]
 }

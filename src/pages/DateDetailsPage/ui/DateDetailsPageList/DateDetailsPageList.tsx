@@ -8,6 +8,8 @@ import { TaskCard } from "entities/Task/ui/TaskCard/TaskCard";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { AddNewTask } from "features/addNewTask";
+import RescheduleIcon from "shared/assets/icons/Reschedule.svg";
+import DeleteIcon from "shared/assets/icons/DeleteIcon.svg";
 
 export const DateDetailsPageList = () => {
     const { t } = useTranslation();
@@ -36,6 +38,14 @@ export const DateDetailsPageList = () => {
         setSelectedTasks(newArr);
     };
 
+    const onSelectAll = () => {
+        setSelectedTasks(tasks.map((item) => item.id));
+    };
+
+    const selectNone = () => {
+        setSelectedTasks([]);
+    };
+
     return (
         <div className={classes.DateDetailsPageList}>
             {tasks.map((task) => {
@@ -48,8 +58,39 @@ export const DateDetailsPageList = () => {
                     />
                 );
             })}
-            <div className={classes.AddNewTaskContainer}>
-                {selectedTasks.length ? null : <AddNewTask />}
+            <div className={classes.bottomPanel}>
+                {selectedTasks.length ? (
+                    <>
+                        <button
+                            className={classes.cancelSelection}
+                            onClick={selectNone}
+                        >
+                            {t("Отменить")}
+                        </button>
+                        <div className={classes.buttons}>
+                            <button className={classes.DeleteIcon}>
+                                <DeleteIcon className={classes.DeleteIconSvg} />
+                            </button>
+                            <button className={classes.RescheduleIcon}>
+                                <RescheduleIcon
+                                    className={classes.RescheduleIconSvg}
+                                />
+                            </button>
+                        </div>
+                    </>
+                ) : (
+                    <>
+                        <button
+                            className={classes.selectAllButton}
+                            onClick={onSelectAll}
+                        >
+                            {t("Выбрать все")}
+                        </button>
+                        <div className={classes.addNewTaskButton}>
+                            <AddNewTask />
+                        </div>
+                    </>
+                )}
             </div>
         </div>
     );

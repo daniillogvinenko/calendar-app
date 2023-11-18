@@ -3,6 +3,8 @@
     color: var(--bg-color);
 }
 
+
+
 .selected {
     color: red;
 }
@@ -12,7 +14,57 @@
     text-align: center;
 }
 
-.AddNewTaskContainer {
+.empty div {
+    margin-bottom: 30px;
+}
+
+.bottomPanel {
+    padding: 0 250px;
+    margin-bottom: 100px;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+}
+
+.selectAllButton {
+    font: var(--font-m);
+    background-color: var(--bg-color);
+    color: var(--header-text);
+}
+
+.cancelSelection {
+    font: var(--font-m);
+    background-color: var(--bg-color);
+    color: var(--header-text);
+}
+
+.addNewTaskButton {
+    text-align: center;
+}
+
+.DeleteIcon {
+    width: 56px;
+    height: 56px;
+    background-color: var(--main-color);
+    border-radius: 20px;
+}
+
+.DeleteIconSvg path {
+    fill: var(--bg-color);
+}
+
+.RescheduleIcon {
+    width: 56px;
+    height: 56px;
+    background-color: var(--main-color);
+    border-radius: 20px;
+}
+
+.RescheduleIconSvg path {
+    fill: var(--bg-color);
+}
+
+.buttons {
     display: flex;
     justify-content: center;
+    gap: 42px;
 }

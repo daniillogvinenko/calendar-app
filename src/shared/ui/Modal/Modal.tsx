@@ -23,7 +23,6 @@ export const Modal = (props: ModalProps) => {
         <Portal>
             <div className={className} onClick={onCloseModal}>
                 <div onClick={onContentClick} className={classes.content}>
-                    <div onClick={onCloseModal}>x</div>
                     {children}
                 </div>
             </div>

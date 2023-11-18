@@ -72,31 +72,49 @@ export const AddNewTask = () => {
                     <Loader color="dark" />
                 ) : (
                     <>
-                        <div>
+                        <div className={classes.modalHeader}>
+                            <div>{t("Добавить задачу")}</div>
+                            <div
+                                style={{ cursor: "pointer" }}
+                                onClick={onCloseModal}
+                            >
+                                ✕
+                            </div>
+                        </div>
+                        <div className={classes.inputContainer}>
                             <input
+                                className={classes.taskInput}
                                 onChange={onChangeTaskInputValue}
                                 value={taskInputValue}
                                 type="text"
                                 placeholder={t("Введите задачу")}
                             />
-                            <input
-                                onChange={onChangeTimeFromInputValue}
-                                value={timeFromInputValue}
-                                type="text"
-                                placeholder={t("Время от")}
-                            />
-                            <input
-                                onChange={onChangeTimeToInputValue}
-                                value={timeToInputValue}
-                                type="text"
-                                placeholder={t("Время до")}
-                            />
+                            <div className={classes.timeInputs}>
+                                <input
+                                    onChange={onChangeTimeFromInputValue}
+                                    value={timeFromInputValue}
+                                    type="text"
+                                    placeholder={t("Время от")}
+                                />
+                                <input
+                                    onChange={onChangeTimeToInputValue}
+                                    value={timeToInputValue}
+                                    type="text"
+                                    placeholder={t("Время до")}
+                                />
+                            </div>
                         </div>
-                        <div>
-                            <button onClick={onAddNewTask}>
+                        <div className={classes.buttons}>
+                            <button
+                                className={classes.addNewTaskButton}
+                                onClick={onAddNewTask}
+                            >
                                 {t("ДОБАВИТЬ")}
                             </button>
-                            <button onClick={onCloseModal}>
+                            <button
+                                className={classes.cancelButton}
+                                onClick={onCloseModal}
+                            >
                                 {t("ОТМЕНА")}
                             </button>
                         </div>

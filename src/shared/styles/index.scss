@@ -9,6 +9,25 @@ body {
     font: var(--font-m);
 }
 
+body::-webkit-scrollbar {
+    width: 28px;
+    /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--bg-color);
+    /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--header-text);
+    /* color of the scroll thumb */
+    border-radius: 20px;
+    /* roundness of the scroll thumb */
+    border: 10px solid var(--bg-color);
+    /* creates padding around scroll thumb */
+}
+
 .container {
     // container = 1290px, прибавляем по 30px (паддинги с каждой стороны)
     max-width: 1350px;

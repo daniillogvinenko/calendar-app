@@ -10,7 +10,7 @@ interface TaskCardProps {
 
 export const TaskCard = (props: TaskCardProps) => {
     const { task, selectedTasks, setSelectedTasks } = props;
-    const isSelected = selectedTasks.includes(task.id);
+    const isSelected = selectedTasks?.includes(task.id);
 
     const onSelect = () => {
         if (isSelected) {

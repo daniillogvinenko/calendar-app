@@ -1,13 +1,9 @@
 .DateDetailsPageHeader {
+    padding: 0 250px;
     width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
     gap: 50px;
-}
-
-.flex {
-    opacity: 0;
 }
 
 .gobackBtn {
@@ -19,4 +15,8 @@
 .gobackBtn path {
     fill: var(--bg-color);
     stroke: var(--header-text);
+}
+
+.date {
+    text-align: center;
 }
