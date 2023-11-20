@@ -1,15 +1,33 @@
-.AddNewTask {
-    font-size: 30px;
-    display: inline-block;
-    width: 56px;
-    height: 56px;
-    color: var(--bg-color);
-    background-color: var(--main-color);
-    border-radius: 20px;
+.EditTask {
+    background-color: var(--bg-color);
+}
 
-    &:hover {
-        opacity: 0.7;
-    }
+.EditTask path {
+    stroke: var(--header-text);
+    fill: var(--header-text);
+}
+
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.errorContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.errorIcon path {
+    stroke: var(--accent-color);
+}
+
+.errorIcon circle {
+    fill: none;
+    stroke: var(--accent-color);
 }
 
 .inputContainer {
@@ -61,27 +79,4 @@ input {
     }
 
     background-color: #F00;
-}
-
-.modalHeader {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 30px;
-}
-
-.errorContainer {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: var(--accent-color);
-    margin-bottom: 20px;
-}
-
-.errorIcon path {
-    stroke: var(--accent-color);
-}
-
-.errorIcon circle {
-    fill: none;
-    stroke: var(--accent-color);
 }

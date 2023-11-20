@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { type AddNewTaskSchema } from "../types/AddNewTaskSchema";
+import { type EditTaskSchema } from "../types/EditTaskSchema";
 
-const initialState: AddNewTaskSchema = {
+const initialState: EditTaskSchema = {
     task: "",
     timeFrom: "",
     timeTo: "",
@@ -11,8 +11,8 @@ const initialState: AddNewTaskSchema = {
     error: "",
 };
 
-export const addNewTaskSlice = createSlice({
-    name: "addNewTask",
+export const editTaskSlice = createSlice({
+    name: "editTask",
     initialState,
     reducers: {
         changeTaskInput: (state, action: PayloadAction<string>) => {
@@ -44,5 +44,5 @@ export const addNewTaskSlice = createSlice({
     },
 });
 
-export const { actions: addNewTaskActions, reducer: addNewTaskReducer } =
-    addNewTaskSlice;
+export const { actions: editTaskActions, reducer: editTaskReducer } =
+    editTaskSlice;

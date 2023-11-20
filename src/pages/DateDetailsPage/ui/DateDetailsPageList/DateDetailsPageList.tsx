@@ -10,12 +10,15 @@ import { useTranslation } from "react-i18next";
 import { AddNewTask } from "features/addNewTask";
 import RescheduleIcon from "shared/assets/icons/Reschedule.svg";
 import DeleteIcon from "shared/assets/icons/DeleteIcon.svg";
+import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { deleteTasks } from "../../model/services/deleteTasks/deleteTasks";
 
 export const DateDetailsPageList = () => {
     const { t } = useTranslation();
     const tasks = useSelector(getDateDetailsPageTasks);
     const tasksError = useSelector(getDateDetailsPageTasksError);
     const [selectedTasks, setSelectedTasks] = useState<number[]>([]);
+    const dispatch = useAppDispatch();
 
     if (tasksError) {
         return (
@@ -42,8 +45,12 @@ export const DateDetailsPageList = () => {
         setSelectedTasks(tasks.map((item) => item.id));
     };
 
-    const selectNone = () => {
+    const onSelectNone = () => {
         setSelectedTasks([]);
+    };
+
+    const onDeleteSelected = () => {
+        dispatch(deleteTasks(selectedTasks));
     };
 
     return (
@@ -63,12 +70,15 @@ export const DateDetailsPageList = () => {
                     <>
                         <button
                             className={classes.cancelSelection}
-                            onClick={selectNone}
+                            onClick={onSelectNone}
                         >
                             {t("Отменить")}
                         </button>
                         <div className={classes.buttons}>
-                            <button className={classes.DeleteIcon}>
+                            <button
+                                onClick={onDeleteSelected}
+                                className={classes.DeleteIcon}
+                            >
                                 <DeleteIcon className={classes.DeleteIconSvg} />
                             </button>
                             <button className={classes.RescheduleIcon}>

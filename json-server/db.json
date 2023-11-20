@@ -1,90 +1,83 @@
 {
-    "dates": [
-        {
-            "id": 81,
-            "dateDay": "30",
-            "dateMonth": "10",
-            "dateYear": "2023",
-            "dateWeekday": "1"
-        },
-        {
-            "id": 82,
-            "dateDay": "31",
-            "dateMonth": "10",
-            "dateYear": "2023",
-            "dateWeekday": "2"
-        },
-        {
-            "id": 83,
-            "dateDay": "1",
-            "dateMonth": "11",
-            "dateYear": "2023",
-            "dateWeekday": "3"
-        },
-        {
-            "id": 84,
-            "dateDay": "2",
-            "dateMonth": "11",
-            "dateYear": "2023",
-            "dateWeekday": "4"
-        },
-        {
-            "id": 85,
-            "dateDay": "3",
-            "dateMonth": "11",
-            "dateYear": "2023",
-            "dateWeekday": "5"
-        },
-        {
-            "id": 86,
-            "dateDay": "4",
-            "dateMonth": "11",
-            "dateYear": "2023",
-            "dateWeekday": "6"
-        },
-        {
-            "id": 87,
-            "dateDay": "5",
-            "dateMonth": "11",
-            "dateYear": "2023",
-            "dateWeekday": "0"
-        },
-        {
-            "id": 88,
-            "dateDay": "6",
-            "dateMonth": "11",
-            "dateYear": "2023",
-            "dateWeekday": "1"
-        },
-        {
-            "id": 89,
-            "dateDay": "7",
-            "dateMonth": "11",
-            "dateYear": "2023",
-            "dateWeekday": "2"
-        }
-    ],
-    "tasks": [
-        {
-            "taskText": "test",
-            "taskTimeFrom": "1234",
-            "taskTimeTo": "5435",
-            "dateId": 81,
-            "id": 1
-        },
-        {
-            "taskText": "test",
-            "taskTimeFrom": "2",
-            "taskTimeTo": "",
-            "dateId": 81,
-            "id": 2
-        },
-        {
-            "taskText": "test",
-            "taskTimeFrom": "",
-            "taskTimeTo": "",
-            "dateId": 81,
-            "id": 3
-        }
-    ]
+  "dates": [
+    {
+      "id": 81,
+      "dateDay": "30",
+      "dateMonth": "10",
+      "dateYear": "2023",
+      "dateWeekday": "1"
+    },
+    {
+      "id": 82,
+      "dateDay": "31",
+      "dateMonth": "10",
+      "dateYear": "2023",
+      "dateWeekday": "2"
+    },
+    {
+      "id": 83,
+      "dateDay": "1",
+      "dateMonth": "11",
+      "dateYear": "2023",
+      "dateWeekday": "3"
+    },
+    {
+      "id": 84,
+      "dateDay": "2",
+      "dateMonth": "11",
+      "dateYear": "2023",
+      "dateWeekday": "4"
+    },
+    {
+      "id": 85,
+      "dateDay": "3",
+      "dateMonth": "11",
+      "dateYear": "2023",
+      "dateWeekday": "5"
+    },
+    {
+      "id": 86,
+      "dateDay": "4",
+      "dateMonth": "11",
+      "dateYear": "2023",
+      "dateWeekday": "6"
+    },
+    {
+      "id": 87,
+      "dateDay": "5",
+      "dateMonth": "11",
+      "dateYear": "2023",
+      "dateWeekday": "0"
+    },
+    {
+      "id": 88,
+      "dateDay": "6",
+      "dateMonth": "11",
+      "dateYear": "2023",
+      "dateWeekday": "1"
+    },
+    {
+      "id": 89,
+      "dateDay": "7",
+      "dateMonth": "11",
+      "dateYear": "2023",
+      "dateWeekday": "2"
+    }
+  ],
+  "tasks": [
+    {
+      "taskText": "Сделать исит",
+      "taskTimeFrom": "12:00",
+      "taskTimeTo": "13:00",
+      "dateId": 81,
+      "id": 1
+    },
+    {
+      "taskText": "Сделать 3Д (Блокинг)",
+      "taskTimeFrom": "15:00",
+      "taskTimeTo": "16:30",
+      "dateId": 81,
+      "id": 2
+    }
+  ]
 }

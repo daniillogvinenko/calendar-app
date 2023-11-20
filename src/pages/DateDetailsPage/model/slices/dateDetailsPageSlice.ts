@@ -35,6 +35,26 @@ export const dateDetailsPageSlice = createSlice({
         addTask: (state, action: PayloadAction<TaskSchema>) => {
             state.tasks = [...state.tasks, action.payload];
         },
+        removeTasks: (state, action: PayloadAction<number[]>) => {
+            state.tasks = state.tasks.filter(
+                (task) => !action.payload.includes(task.id)
+            );
+        },
+        editTaskById: (
+            state,
+            action: PayloadAction<{
+                taskId: number;
+                taskData: Omit<TaskSchema, "id" | "dateId" | "date">;
+            }>
+        ) => {
+            const index = state.tasks.findIndex(
+                (element) => element.id === action.payload.taskId
+            );
+            state.tasks[index].taskText = action.payload.taskData.taskText;
+            state.tasks[index].taskTimeFrom =
+                action.payload.taskData.taskTimeFrom;
+            state.tasks[index].taskTimeTo = action.payload.taskData.taskTimeTo;
+        },
         setDate: (state, action: PayloadAction<DateSchema>) => {
             state.date = action.payload;
         },
@@ -43,6 +63,20 @@ export const dateDetailsPageSlice = createSlice({
         },
         setDateError: (state, action: PayloadAction<string>) => {
             state.dateError = action.payload;
+        },
+        reset: (state) => {
+            state.tasks = [];
+            state.tasksIsLoading = false;
+            state.tasksError = "";
+            state.date = {
+                dateDay: "",
+                dateMonth: "",
+                dateWeekday: "",
+                dateYear: "",
+                id: 0,
+            };
+            state.dateIsLoading = false;
+            state.dateError = "";
         },
     },
 });

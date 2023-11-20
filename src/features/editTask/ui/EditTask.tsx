@@ -1,61 +1,70 @@
 import { Modal } from "shared/ui/Modal/Modal";
-import classes from "./AddNewTask.module.scss";
+import classes from "./EditTask.module.scss";
 import { type ChangeEvent } from "react";
-import { useTranslation } from "react-i18next";
+import EditIcon from "shared/assets/icons/Pencil.svg";
+import WarningIcon from "shared/assets/icons/WarningIcon.svg";
 import { useSelector } from "react-redux";
 import {
-    getAddNewTaskError,
-    getAddNewTaskIsLoading,
-    getAddNewTaskModalIsOpened,
-    getAddNewTaskTaskInput,
-    getAddNewTaskTimeFromInput,
-    getAddNewTaskTimeToInput,
-} from "../model/selectors/addNewTaskSelectors";
-import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { addNewTaskActions } from "../model/slices/addNewTaskSlice";
+    getEditTaskError,
+    getEditTaskIsLoading,
+    getEditTaskModalIsOpened,
+    getEditTaskTaskInput,
+    getEditTaskTimeFromInput,
+    getEditTaskTimeToInput,
+} from "../model/selectors/editTaskSelectors";
 import { Loader } from "shared/ui/Loader/Loader";
-import { addNewTaskThunk } from "../model/services/addNewTaskThunk";
-import { useParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { editTaskActions } from "../model/slices/editTaskSlice";
 import { validateAddNewTask } from "shared/lib/validation/validateAddNewTask";
-import WarningIcon from "shared/assets/icons/WarningIcon.svg";
+import { editTaskThunk } from "../model/services/editTaskThunk";
+import { getDateDetailsPageTasks } from "../../../pages/DateDetailsPage/model/selectors/dateDetailsPageSelectors";
 
-export const AddNewTask = () => {
+interface EditTaskProps {
+    taskId: number;
+}
+
+export const EditTask = (props: EditTaskProps) => {
+    const { taskId } = props;
     const { t } = useTranslation();
+
     const dispatch = useAppDispatch();
-    const { id } = useParams<{ id: string }>();
 
-    const taskInputValue = useSelector(getAddNewTaskTaskInput);
-    const timeFromInputValue = useSelector(getAddNewTaskTimeFromInput);
-    const timeToInputValue = useSelector(getAddNewTaskTimeToInput);
-    const isLoading = useSelector(getAddNewTaskIsLoading);
-    const isOpened = useSelector(getAddNewTaskModalIsOpened);
-    const error = useSelector(getAddNewTaskError);
+    const isLoading = useSelector(getEditTaskIsLoading);
+    const error = useSelector(getEditTaskError);
+    const taskInputValue = useSelector(getEditTaskTaskInput);
+    const timeFromInputValue = useSelector(getEditTaskTimeFromInput);
+    const timeToInputValue = useSelector(getEditTaskTimeToInput);
+    const modalIsOpened = useSelector(getEditTaskModalIsOpened);
 
-    const onCloseModal = () => {
-        dispatch(addNewTaskActions.changeTaskInput(""));
-        dispatch(addNewTaskActions.changeTimeFromInput(""));
-        dispatch(addNewTaskActions.changeTimeToInput(""));
-        dispatch(addNewTaskActions.toggleModalIsOpened(false));
-        dispatch(addNewTaskActions.setModalError(""));
+    const tasks = useSelector(getDateDetailsPageTasks);
+    const index = tasks.findIndex((task) => task.id === taskId);
+    const task = tasks[index];
+
+    const onOpenHandler = () => {
+        dispatch(editTaskActions.changeTaskInput(task.taskText));
+        dispatch(editTaskActions.changeTimeFromInput(task.taskTimeFrom));
+        dispatch(editTaskActions.changeTimeToInput(task.taskTimeTo));
+        dispatch(editTaskActions.toggleModalIsOpened(true));
     };
 
-    const onOpenModal = () => {
-        dispatch(addNewTaskActions.toggleModalIsOpened(true));
+    const onCloseHandler = () => {
+        dispatch(editTaskActions.toggleModalIsOpened(false));
     };
 
     const onChangeTaskInputValue = (e: ChangeEvent<HTMLInputElement>) => {
-        dispatch(addNewTaskActions.changeTaskInput(e.currentTarget.value));
+        dispatch(editTaskActions.changeTaskInput(e.currentTarget.value));
     };
 
     const onChangeTimeFromInputValue = (e: ChangeEvent<HTMLInputElement>) => {
-        dispatch(addNewTaskActions.changeTimeFromInput(e.currentTarget.value));
+        dispatch(editTaskActions.changeTimeFromInput(e.currentTarget.value));
     };
 
     const onChangeTimeToInputValue = (e: ChangeEvent<HTMLInputElement>) => {
-        dispatch(addNewTaskActions.changeTimeToInput(e.currentTarget.value));
+        dispatch(editTaskActions.changeTimeToInput(e.currentTarget.value));
     };
 
-    const onAddNewTask = () => {
+    const onSaveChangesHandler = () => {
         if (
             validateAddNewTask(
                 taskInputValue,
@@ -64,7 +73,7 @@ export const AddNewTask = () => {
             )
         ) {
             dispatch(
-                addNewTaskActions.setModalError(
+                editTaskActions.setModalError(
                     t(
                         validateAddNewTask(
                             taskInputValue,
@@ -76,32 +85,30 @@ export const AddNewTask = () => {
             );
             return;
         }
-        if (id) {
-            dispatch(
-                addNewTaskThunk(+id, {
-                    taskText: taskInputValue,
-                    taskTimeFrom: timeFromInputValue,
-                    taskTimeTo: timeToInputValue,
-                })
-            );
-        }
+        dispatch(
+            editTaskThunk(taskId, {
+                taskText: taskInputValue,
+                taskTimeFrom: timeFromInputValue,
+                taskTimeTo: timeToInputValue,
+            })
+        );
     };
 
     return (
         <>
-            <button onClick={onOpenModal} className={classes.AddNewTask}>
-                +
+            <button onClick={onOpenHandler} className={classes.EditTask}>
+                <EditIcon />
             </button>
-            <Modal isOpened={isOpened} onCloseModal={onCloseModal}>
+            <Modal isOpened={modalIsOpened} onCloseModal={onCloseHandler}>
                 {isLoading ? (
                     <Loader color="dark" />
                 ) : (
                     <>
                         <div className={classes.modalHeader}>
-                            <div>{t("Добавить задачу")}</div>
+                            <div>{t("Редактировать задачу")}</div>
                             <div
                                 style={{ cursor: "pointer" }}
-                                onClick={onCloseModal}
+                                onClick={onCloseHandler}
                             >
                                 ✕
                             </div>
@@ -138,13 +145,13 @@ export const AddNewTask = () => {
                         <div className={classes.buttons}>
                             <button
                                 className={classes.addNewTaskButton}
-                                onClick={onAddNewTask}
+                                onClick={onSaveChangesHandler}
                             >
-                                {t("ДОБАВИТЬ")}
+                                {t("СОХРАНИТЬ")}
                             </button>
                             <button
                                 className={classes.cancelButton}
-                                onClick={onCloseModal}
+                                onClick={onCloseHandler}
                             >
                                 {t("ОТМЕНА")}
                             </button>

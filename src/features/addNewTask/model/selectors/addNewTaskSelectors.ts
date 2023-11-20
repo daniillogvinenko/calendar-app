@@ -10,3 +10,5 @@ export const getAddNewTaskIsLoading = (state: StateSchema) =>
     state.addNewTask.isLoading;
 export const getAddNewTaskModalIsOpened = (state: StateSchema) =>
     state.addNewTask.modalIsOpened;
+export const getAddNewTaskError = (state: StateSchema) =>
+    state.addNewTask.error;

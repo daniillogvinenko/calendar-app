@@ -12,6 +12,7 @@ import { useEffect } from "react";
 import { fetchTasksByDateId } from "../model/services/fetchTasksById/fetchTasksByDateId";
 import { fetchDateById } from "../model/services/fetchDateById/fetchDateById";
 import { Skeleton } from "shared/ui/Skeleton/Skeleton";
+import { dateDetailsPageActions } from "../model/slices/dateDetailsPageSlice";
 
 export const DateDetailsPage = () => {
     const { id } = useParams<{ id: string }>();
@@ -26,6 +27,10 @@ export const DateDetailsPage = () => {
         } else {
             throw new Error("DateDetailsPage id - undefined");
         }
+
+        return () => {
+            dispatch(dateDetailsPageActions.reset());
+        };
     }, [dispatch, id]);
 
     if (tasksIsLoading || dateIsLoading) {

@@ -11,17 +11,16 @@ export interface ModalProps {
 export const Modal = (props: ModalProps) => {
     const { children, isOpened, onCloseModal } = props;
 
-    const className = isOpened
-        ? [classes.Modal, classes.opened].join(" ")
-        : classes.Modal;
-
     const onContentClick = (e: React.MouseEvent) => {
         e.stopPropagation();
     };
 
+    // чтобы в body не появлялись узлы для каждой модалки
+    if (!isOpened) return null;
+
     return (
         <Portal>
-            <div className={className} onClick={onCloseModal}>
+            <div className={classes.Modal} onClick={onCloseModal}>
                 <div onClick={onContentClick} className={classes.content}>
                     {children}
                 </div>

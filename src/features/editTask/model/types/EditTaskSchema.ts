@@ -1,4 +1,4 @@
-export interface AddNewTaskSchema {
+export interface EditTaskSchema {
     task: string;
     timeFrom: string;
     timeTo: string;

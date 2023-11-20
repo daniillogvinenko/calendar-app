@@ -19,11 +19,7 @@ export const addNewTaskThunk =
             })
             .then((response) => {
                 dispatch(dateDetailsPageActions.addTask(response.data));
-                dispatch(addNewTaskActions.toggleModalIsOpened(false));
-                dispatch(addNewTaskActions.toggleIsLoading(false));
-                dispatch(addNewTaskActions.changeTaskInput(""));
-                dispatch(addNewTaskActions.changeTimeFromInput(""));
-                dispatch(addNewTaskActions.changeTimeToInput(""));
+                dispatch(addNewTaskActions.reset());
             })
             .catch((value) => {
                 dispatch(addNewTaskActions.toggleIsLoading(false));

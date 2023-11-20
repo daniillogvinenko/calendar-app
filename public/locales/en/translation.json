@@ -30,5 +30,9 @@
     "ДОБАВИТЬ": "ADD",
     "ОТМЕНА": "CANCEL",
     "Отменить": "Cancel",
-    "Выбрать все": "Select all"
+    "Выбрать все": "Select all",
+    "Добавить задачу": "Add new task",
+    "ВСЕ ПОЛЯ ДОЛЖНЫ БЫТЬ ЗАПОЛНЕНЫ": "ALL FIELDS MUST BE COMPLETED",
+    "Редактировать задачу": "Edit task",
+    "СОХРАНИТЬ": "SAVE"
 }
