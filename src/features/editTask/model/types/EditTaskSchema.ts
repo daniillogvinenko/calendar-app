@@ -3,6 +3,7 @@ export interface EditTaskSchema {
     timeFrom: string;
     timeTo: string;
     isLoading: boolean;
-    modalIsOpened: boolean;
+    // тут будет храниться id таска, к которому относится модалка, иначе, если сделать boolean, то будут открываться сразу все модалки
+    modalIsOpened: number;
     error: string;
 }

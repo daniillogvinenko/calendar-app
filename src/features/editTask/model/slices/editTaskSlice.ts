@@ -7,7 +7,7 @@ const initialState: EditTaskSchema = {
     timeFrom: "",
     timeTo: "",
     isLoading: false,
-    modalIsOpened: false,
+    modalIsOpened: 0,
     error: "",
 };
 
@@ -27,7 +27,7 @@ export const editTaskSlice = createSlice({
         toggleIsLoading: (state, action: PayloadAction<boolean>) => {
             state.isLoading = action.payload;
         },
-        toggleModalIsOpened: (state, action: PayloadAction<boolean>) => {
+        toggleModalIsOpened: (state, action: PayloadAction<number>) => {
             state.modalIsOpened = action.payload;
         },
         setModalError: (state, action: PayloadAction<string>) => {
@@ -38,7 +38,7 @@ export const editTaskSlice = createSlice({
             state.timeFrom = "";
             state.timeTo = "";
             state.isLoading = false;
-            state.modalIsOpened = false;
+            state.modalIsOpened = 0;
             state.error = "";
         },
     },

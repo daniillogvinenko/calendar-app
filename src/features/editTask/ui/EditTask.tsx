@@ -45,11 +45,12 @@ export const EditTask = (props: EditTaskProps) => {
         dispatch(editTaskActions.changeTaskInput(task.taskText));
         dispatch(editTaskActions.changeTimeFromInput(task.taskTimeFrom));
         dispatch(editTaskActions.changeTimeToInput(task.taskTimeTo));
-        dispatch(editTaskActions.toggleModalIsOpened(true));
+        dispatch(editTaskActions.toggleModalIsOpened(taskId));
+        dispatch(editTaskActions.setModalError(""));
     };
 
     const onCloseHandler = () => {
-        dispatch(editTaskActions.toggleModalIsOpened(false));
+        dispatch(editTaskActions.toggleModalIsOpened(0));
     };
 
     const onChangeTaskInputValue = (e: ChangeEvent<HTMLInputElement>) => {
@@ -99,7 +100,11 @@ export const EditTask = (props: EditTaskProps) => {
             <button onClick={onOpenHandler} className={classes.EditTask}>
                 <EditIcon />
             </button>
-            <Modal isOpened={modalIsOpened} onCloseModal={onCloseHandler}>
+            <Modal
+                // в стейте хранится id открытой модалки и чтобы все модалки не открывались, выполняется данная проверка
+                isOpened={modalIsOpened === taskId}
+                onCloseModal={onCloseHandler}
+            >
                 {isLoading ? (
                     <Loader color="dark" />
                 ) : (

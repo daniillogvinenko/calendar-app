@@ -34,5 +34,8 @@
     "Добавить задачу": "Add new task",
     "ВСЕ ПОЛЯ ДОЛЖНЫ БЫТЬ ЗАПОЛНЕНЫ": "ALL FIELDS MUST BE COMPLETED",
     "Редактировать задачу": "Edit task",
-    "СОХРАНИТЬ": "SAVE"
+    "СОХРАНИТЬ": "SAVE",
+    "Перенести задачи": "Reschedule tasks",
+    "Перенести на": "Reschedule for",
+    "ПЕРЕНЕСТИ": "RESCHEDULE"
 }

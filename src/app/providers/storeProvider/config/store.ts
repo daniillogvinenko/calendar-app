@@ -1,8 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { mainPageReducer } from "pages/MainPage";
-import { dateDetailsPageReducer } from "pages/DateDetailsPage/model/slices/dateDetailsPageSlice";
-import { addNewTaskReducer } from "features/addNewTask/model/slices/addNewTaskSlice";
-import { editTaskReducer } from "features/editTask/model/slices/editTaskSlice";
+import { dateDetailsPageReducer } from "pages/DateDetailsPage";
+import { addNewTaskReducer } from "features/addNewTask";
+import { editTaskReducer } from "features/editTask";
+import { rescheduleTasksReducer } from "features/rescheduleTasks";
 
 export const store = configureStore({
     reducer: {
@@ -10,6 +11,7 @@ export const store = configureStore({
         dateDetailsPage: dateDetailsPageReducer,
         addNewTask: addNewTaskReducer,
         editTask: editTaskReducer,
+        rescheduleTasks: rescheduleTasksReducer,
     },
     devTools: _IS_DEV_,
 });

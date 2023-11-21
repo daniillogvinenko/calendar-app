@@ -1,0 +1,77 @@
+.RescheduleIcon {
+    width: 56px;
+    height: 56px;
+    background-color: var(--main-color);
+    border-radius: 20px;
+}
+
+.RescheduleIconSvg path {
+    fill: var(--bg-color);
+}
+
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.errorContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.errorIcon path {
+    stroke: var(--accent-color);
+}
+
+.errorIcon circle {
+    fill: none;
+    stroke: var(--accent-color);
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+}
+
+.buttons button {
+    color: white;
+    width: 161px;
+    border-radius: 19px;
+    padding: 16px 32px;
+}
+
+.applyRescheduleButton {
+    &:hover {
+        opacity: 0.7;
+    }
+
+    background-color: #4B4B4B;
+}
+
+.cancelButton {
+    &:hover {
+        opacity: 0.7;
+    }
+
+    background-color: #F00;
+}
+
+.inputContainer {
+    margin-bottom: 60px;
+    margin-top: 26px;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+input {
+    padding: 5px 25px;
+    box-shadow: 2px 3px 9px 0px rgba(0, 0, 0, 0.30) inset;
+    border-radius: 52px;
+    height: 45px;
+}

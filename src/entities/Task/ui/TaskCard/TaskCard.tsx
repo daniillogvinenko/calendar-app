@@ -1,4 +1,4 @@
-import { EditTask } from "features/editTask/ui/EditTask";
+import { EditTask } from "features/editTask";
 import { type TaskSchema } from "../../model/types/task";
 import classes from "./TaskCard.module.scss";
 

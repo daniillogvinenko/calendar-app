@@ -8,10 +8,10 @@ import { TaskCard } from "entities/Task/ui/TaskCard/TaskCard";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { AddNewTask } from "features/addNewTask";
-import RescheduleIcon from "shared/assets/icons/Reschedule.svg";
 import DeleteIcon from "shared/assets/icons/DeleteIcon.svg";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { deleteTasks } from "../../model/services/deleteTasks/deleteTasks";
+import { RescheduleTasks } from "features/rescheduleTasks";
 
 export const DateDetailsPageList = () => {
     const { t } = useTranslation();
@@ -81,11 +81,10 @@ export const DateDetailsPageList = () => {
                             >
                                 <DeleteIcon className={classes.DeleteIconSvg} />
                             </button>
-                            <button className={classes.RescheduleIcon}>
-                                <RescheduleIcon
-                                    className={classes.RescheduleIconSvg}
-                                />
-                            </button>
+                            <RescheduleTasks
+                                selectedTasks={selectedTasks}
+                                tasks={tasks}
+                            />
                         </div>
                     </>
                 ) : (

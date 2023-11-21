@@ -3,24 +3,23 @@ import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import classes from "./MainPage.module.scss";
 import { fetchAllDates } from "../model/services/fetchAllDates/fetchAllDates";
 import { useSelector } from "react-redux";
-import { AppLink } from "shared/ui/AppLink/AppLink";
-import { getMonthName } from "shared/lib/getMonthName/getMonthName";
 import { useTranslation } from "react-i18next";
-import { getDateFormat } from "shared/lib/getDateFormat/getDateFormat";
-import { getWeekDay } from "shared/lib/getWeekDay/getWeekDay";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
 import {
     getMainPageDates,
     getMainPageError,
     getMainPageIsLoading,
 } from "../model/selectors/mainPageSelectors";
 import { Loader } from "shared/ui/Loader/Loader";
+import "shared/styles/splide.scss";
+import { DateCard } from "./DateCard/DateCard";
 
 export const MainPage = () => {
     const dispatch = useAppDispatch();
     const dates = useSelector(getMainPageDates);
     const isLoading = useSelector(getMainPageIsLoading);
     const error = useSelector(getMainPageError);
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
 
     useEffect(() => {
         dispatch(fetchAllDates);
@@ -42,19 +41,22 @@ export const MainPage = () => {
 
     return (
         <div className={classes.MainPage + " container"}>
-            {dates.map((date) => (
-                <div className={classes.DateItem} key={date.id}>
-                    <AppLink to={`/${date.id}`}>
-                        {getDateFormat(
-                            i18n.language as "ru" | "en",
-                            +date.dateDay,
-                            t(getMonthName(+date.dateMonth)),
-                            +date.dateYear,
-                            t(getWeekDay(+date.dateWeekday))
-                        )}
-                    </AppLink>
-                </div>
-            ))}
+            <Splide
+                options={{
+                    direction: "ttb",
+                    pagination: false,
+                    autoHeight: true,
+                    // heightRatio: 0.1,
+                    height: 300,
+                    wheel: true,
+                }}
+            >
+                {dates.map((date) => (
+                    <SplideSlide key={date.id}>
+                        <DateCard date={date} />
+                    </SplideSlide>
+                ))}
+            </Splide>
         </div>
     );
 };

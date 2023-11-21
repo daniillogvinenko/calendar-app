@@ -30,5 +30,6 @@ export const editTaskThunk =
             })
             .catch((value) => {
                 dispatch(editTaskActions.toggleIsLoading(false));
+                dispatch(editTaskActions.setModalError("404"));
             });
     };

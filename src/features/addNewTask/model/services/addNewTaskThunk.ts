@@ -23,6 +23,6 @@ export const addNewTaskThunk =
             })
             .catch((value) => {
                 dispatch(addNewTaskActions.toggleIsLoading(false));
-                dispatch(addNewTaskActions.toggleModalIsOpened(false));
+                dispatch(addNewTaskActions.setModalError("404"));
             });
     };
