@@ -5,7 +5,7 @@ export const calcRescheduleTime = (time: string, addTime: string) => {
     const timeMinutes = +timeSplit[0] * 60 + +timeSplit[1];
     const addTimeMinutes = +addTimeSplit[0] * 60 + +addTimeSplit[1];
 
-    const resMinutesTotal = timeMinutes + addTimeMinutes;
+    const resMinutesTotal = timeMinutes + addTimeMinutes >= 1440 ? timeMinutes + addTimeMinutes - 1440 : timeMinutes + addTimeMinutes;
 
     const resHours =
         Math.floor(resMinutesTotal / 60) >= 10

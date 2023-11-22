@@ -40,23 +40,25 @@ export const MainPage = () => {
     }
 
     return (
-        <div className={classes.MainPage + " container"}>
-            <Splide
-                options={{
-                    direction: "ttb",
-                    pagination: false,
-                    autoHeight: true,
-                    // heightRatio: 0.1,
-                    height: 300,
-                    wheel: true,
-                }}
-            >
-                {dates.map((date) => (
-                    <SplideSlide key={date.id}>
-                        <DateCard date={date} />
-                    </SplideSlide>
-                ))}
-            </Splide>
+        <div className="container">
+            <div className={classes.MainPage}>
+                <Splide
+                    options={{
+                        direction: "ttb",
+                        pagination: false,
+                        autoHeight: true,
+                        // heightRatio: 0.1,
+                        height: 460,
+                        wheel: true,
+                    }}
+                >
+                    {dates.map((date) => (
+                        <SplideSlide key={date.id}>
+                            <DateCard date={date} />
+                        </SplideSlide>
+                    ))}
+                </Splide>
+            </div>
         </div>
     );
 };

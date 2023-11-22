@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { Loader } from "shared/ui/Loader/Loader";
 import WarningIcon from "shared/assets/icons/WarningIcon.svg";
 import RescheduleIcon from "shared/assets/icons/Reschedule.svg";
+import MaskedInput from "react-text-mask";
 import { useSelector } from "react-redux";
 import {
     getRescheduleTasksError,
@@ -85,7 +86,8 @@ export const RescheduleTasks = ({
                             </div>
                         ) : null}
                         <div className={classes.inputContainer}>
-                            <input
+                            <MaskedInput
+                                mask={[/[0-9]/, /[0-9]/, ':', /[0-9]/, /[0-9]/]}
                                 onChange={onTimeInputChangeHandler}
                                 value={timeInput}
                                 type="text"

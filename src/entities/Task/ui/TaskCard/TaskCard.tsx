@@ -36,7 +36,7 @@ export const TaskCard = (props: TaskCardProps) => {
     return (
         <div key={task.id} className={TaskCardClassName}>
             <div onClick={onSelect} className={classes.selectButton} />
-            <div className={classes.content}>
+            <div onClick={onSelect} className={classes.content}>
                 <div>{task.taskText}</div>
                 <div className={classes.time}>
                     {task.taskTimeFrom && task.taskTimeTo

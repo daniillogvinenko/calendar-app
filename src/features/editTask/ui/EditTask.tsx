@@ -12,6 +12,7 @@ import {
     getEditTaskTimeFromInput,
     getEditTaskTimeToInput,
 } from "../model/selectors/editTaskSelectors";
+import MaskedInput from "react-text-mask";
 import { Loader } from "shared/ui/Loader/Loader";
 import { useTranslation } from "react-i18next";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
@@ -133,13 +134,15 @@ export const EditTask = (props: EditTaskProps) => {
                                 placeholder={t("Введите задачу")}
                             />
                             <div className={classes.timeInputs}>
-                                <input
+                                <MaskedInput
+                                    mask={[/[0-9]/, /[0-9]/, ':', /[0-9]/, /[0-9]/]}
                                     onChange={onChangeTimeFromInputValue}
                                     value={timeFromInputValue}
                                     type="text"
                                     placeholder={t("Время от")}
                                 />
-                                <input
+                                <MaskedInput
+                                    mask={[/[0-9]/, /[0-9]/, ':', /[0-9]/, /[0-9]/]}
                                     onChange={onChangeTimeToInputValue}
                                     value={timeToInputValue}
                                     type="text"

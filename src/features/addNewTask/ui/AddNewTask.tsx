@@ -3,6 +3,7 @@ import classes from "./AddNewTask.module.scss";
 import { type ChangeEvent } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
+import MaskedInput from 'react-text-mask';
 import {
     getAddNewTaskError,
     getAddNewTaskIsLoading,
@@ -121,13 +122,15 @@ export const AddNewTask = () => {
                                 placeholder={t("Введите задачу")}
                             />
                             <div className={classes.timeInputs}>
-                                <input
+                                <MaskedInput
+                                    mask={[/[0-9]/, /[0-9]/, ':', /[0-9]/, /[0-9]/]}
                                     onChange={onChangeTimeFromInputValue}
                                     value={timeFromInputValue}
                                     type="text"
                                     placeholder={t("Время от")}
                                 />
-                                <input
+                                <MaskedInput
+                                    mask={[/[0-9]/, /[0-9]/, ':', /[0-9]/, /[0-9]/]}
                                     onChange={onChangeTimeToInputValue}
                                     value={timeToInputValue}
                                     type="text"
