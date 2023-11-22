@@ -82,12 +82,12 @@ export const RescheduleTasks = ({
                         {error ? (
                             <div className={classes.errorContainer}>
                                 <WarningIcon className={classes.errorIcon} />
-                                {error}
+                                {t(error)}
                             </div>
                         ) : null}
                         <div className={classes.inputContainer}>
                             <MaskedInput
-                                mask={[/[0-9]/, /[0-9]/, ':', /[0-9]/, /[0-9]/]}
+                                mask={[/[0-2]/, /[0-9]/, ":", /[0-5]/, /[0-9]/]}
                                 onChange={onTimeInputChangeHandler}
                                 value={timeInput}
                                 type="text"

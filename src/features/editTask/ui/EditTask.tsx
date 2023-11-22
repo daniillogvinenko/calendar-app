@@ -135,14 +135,26 @@ export const EditTask = (props: EditTaskProps) => {
                             />
                             <div className={classes.timeInputs}>
                                 <MaskedInput
-                                    mask={[/[0-9]/, /[0-9]/, ':', /[0-9]/, /[0-9]/]}
+                                    mask={[
+                                        /[0-2]/,
+                                        /[0-9]/,
+                                        ":",
+                                        /[0-5]/,
+                                        /[0-9]/,
+                                    ]}
                                     onChange={onChangeTimeFromInputValue}
                                     value={timeFromInputValue}
                                     type="text"
                                     placeholder={t("Время от")}
                                 />
                                 <MaskedInput
-                                    mask={[/[0-9]/, /[0-9]/, ':', /[0-9]/, /[0-9]/]}
+                                    mask={[
+                                        /[0-2]/,
+                                        /[0-9]/,
+                                        ":",
+                                        /[0-5]/,
+                                        /[0-9]/,
+                                    ]}
                                     onChange={onChangeTimeToInputValue}
                                     value={timeToInputValue}
                                     type="text"

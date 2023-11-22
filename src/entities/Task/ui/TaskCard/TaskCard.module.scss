@@ -49,6 +49,7 @@
 }
 
 .time {
+    white-space: nowrap;
     padding: 6px 26px;
     border: 2px solid var(--accent-color);
     font: var(--font-s);

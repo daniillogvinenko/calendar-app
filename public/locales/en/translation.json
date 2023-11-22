@@ -37,5 +37,6 @@
     "СОХРАНИТЬ": "SAVE",
     "Перенести задачи": "Reschedule tasks",
     "Перенести на": "Reschedule for",
-    "ПЕРЕНЕСТИ": "RESCHEDULE"
+    "ПЕРЕНЕСТИ": "RESCHEDULE",
+    "404 ОШИБКА СЕРВЕРА": "404 SERVER ERROR"
 }

@@ -3,7 +3,7 @@ import classes from "./AddNewTask.module.scss";
 import { type ChangeEvent } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import MaskedInput from 'react-text-mask';
+import MaskedInput from "react-text-mask";
 import {
     getAddNewTaskError,
     getAddNewTaskIsLoading,
@@ -110,7 +110,7 @@ export const AddNewTask = () => {
                         {error ? (
                             <div className={classes.errorContainer}>
                                 <WarningIcon className={classes.errorIcon} />
-                                {error}
+                                {t(error)}
                             </div>
                         ) : null}
                         <div className={classes.inputContainer}>
@@ -123,14 +123,26 @@ export const AddNewTask = () => {
                             />
                             <div className={classes.timeInputs}>
                                 <MaskedInput
-                                    mask={[/[0-9]/, /[0-9]/, ':', /[0-9]/, /[0-9]/]}
+                                    mask={[
+                                        /[0-2]/,
+                                        /[0-9]/,
+                                        ":",
+                                        /[0-5]/,
+                                        /[0-9]/,
+                                    ]}
                                     onChange={onChangeTimeFromInputValue}
                                     value={timeFromInputValue}
                                     type="text"
                                     placeholder={t("Время от")}
                                 />
                                 <MaskedInput
-                                    mask={[/[0-9]/, /[0-9]/, ':', /[0-9]/, /[0-9]/]}
+                                    mask={[
+                                        /[0-2]/,
+                                        /[0-9]/,
+                                        ":",
+                                        /[0-5]/,
+                                        /[0-9]/,
+                                    ]}
                                     onChange={onChangeTimeToInputValue}
                                     value={timeToInputValue}
                                     type="text"

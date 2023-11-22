@@ -23,6 +23,6 @@ export const addNewTaskThunk =
             })
             .catch((value) => {
                 dispatch(addNewTaskActions.toggleIsLoading(false));
-                dispatch(addNewTaskActions.setModalError("404"));
+                dispatch(addNewTaskActions.setModalError("404 ОШИБКА СЕРВЕРА"));
             });
     };

@@ -15,8 +15,8 @@ export const DateCard = (props: DateCardProps) => {
     const { t, i18n } = useTranslation();
 
     return (
-        <div className={classes.DateCard}>
-            <AppLink to={`/${date.id}`}>
+        <AppLink to={`/${date.id}`}>
+            <div className={classes.DateCard}>
                 {getDateFormat(
                     i18n.language as "ru" | "en",
                     +date.dateDay,
@@ -24,7 +24,7 @@ export const DateCard = (props: DateCardProps) => {
                     +date.dateYear,
                     t(getWeekDay(+date.dateWeekday))
                 )}
-            </AppLink>
-        </div>
+            </div>
+        </AppLink>
     );
 };

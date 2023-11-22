@@ -4,6 +4,7 @@ import { dateDetailsPageReducer } from "pages/DateDetailsPage";
 import { addNewTaskReducer } from "features/addNewTask";
 import { editTaskReducer } from "features/editTask";
 import { rescheduleTasksReducer } from "features/rescheduleTasks";
+import { navbarReducer } from "widgets/Navbar/model/slices/navbarSlice";
 
 export const store = configureStore({
     reducer: {
@@ -12,6 +13,7 @@ export const store = configureStore({
         addNewTask: addNewTaskReducer,
         editTask: editTaskReducer,
         rescheduleTasks: rescheduleTasksReducer,
+        navbar: navbarReducer,
     },
     devTools: _IS_DEV_,
 });

@@ -10,9 +10,9 @@ import {
     getMainPageError,
     getMainPageIsLoading,
 } from "../model/selectors/mainPageSelectors";
-import { Loader } from "shared/ui/Loader/Loader";
 import "shared/styles/splide.scss";
 import { DateCard } from "./DateCard/DateCard";
+import { Skeleton } from "shared/ui/Skeleton/Skeleton";
 
 export const MainPage = () => {
     const dispatch = useAppDispatch();
@@ -26,7 +26,98 @@ export const MainPage = () => {
     }, [dispatch]);
 
     if (isLoading) {
-        return <Loader className={classes.Loader} />;
+        // if (1) {
+        return (
+            <div className={"container"}>
+                <div className={classes.skeleton}>
+                    <Skeleton
+                        styleProp={{
+                            margin: "98px auto 21px",
+                            width: 630,
+                            height: 74,
+                            borderRadius: "52px",
+                        }}
+                    >
+                        <Skeleton
+                            styleProp={{
+                                margin: "20px 0 0 50px",
+                                width: 250,
+                                height: 30,
+                                borderRadius: "5px",
+                            }}
+                        />
+                    </Skeleton>
+                    <Skeleton
+                        styleProp={{
+                            margin: "0 auto 21px",
+                            width: 630,
+                            height: 74,
+                            borderRadius: "52px",
+                        }}
+                    >
+                        <Skeleton
+                            styleProp={{
+                                margin: "20px 0 0 50px",
+                                width: 250,
+                                height: 30,
+                                borderRadius: "5px",
+                            }}
+                        />
+                    </Skeleton>
+                    <Skeleton
+                        styleProp={{
+                            margin: "0 auto 21px",
+                            width: 630,
+                            height: 74,
+                            borderRadius: "52px",
+                        }}
+                    >
+                        <Skeleton
+                            styleProp={{
+                                margin: "20px 0 0 50px",
+                                width: 250,
+                                height: 30,
+                                borderRadius: "5px",
+                            }}
+                        />
+                    </Skeleton>
+                    <Skeleton
+                        styleProp={{
+                            margin: "0 auto 21px",
+                            width: 630,
+                            height: 74,
+                            borderRadius: "52px",
+                        }}
+                    >
+                        <Skeleton
+                            styleProp={{
+                                margin: "20px 0 0 50px",
+                                width: 250,
+                                height: 30,
+                                borderRadius: "5px",
+                            }}
+                        />
+                    </Skeleton>
+                    <Skeleton
+                        styleProp={{
+                            margin: "0 auto 21px",
+                            width: 630,
+                            height: 74,
+                            borderRadius: "52px",
+                        }}
+                    >
+                        <Skeleton
+                            styleProp={{
+                                margin: "20px 0 0 50px",
+                                width: 250,
+                                height: 30,
+                                borderRadius: "5px",
+                            }}
+                        />
+                    </Skeleton>
+                </div>
+            </div>
+        );
     }
 
     if (error) {

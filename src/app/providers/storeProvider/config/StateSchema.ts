@@ -3,6 +3,7 @@ import { type EditTaskSchema } from "features/editTask";
 import { type AddNewTaskSchema } from "features/addNewTask";
 import { type DateDetailsPageSchema } from "pages/DateDetailsPage";
 import { type MainPageSchema } from "pages/MainPage";
+import { type NavbarSchema } from "widgets/Navbar/model/types/NavbarSchema";
 
 export interface StateSchema {
     mainPage: MainPageSchema;
@@ -10,4 +11,5 @@ export interface StateSchema {
     addNewTask: AddNewTaskSchema;
     editTask: EditTaskSchema;
     rescheduleTasks: RescheduleTasksSchema;
+    navbar: NavbarSchema;
 }

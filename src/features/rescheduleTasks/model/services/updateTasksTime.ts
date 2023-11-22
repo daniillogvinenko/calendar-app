@@ -54,9 +54,12 @@ export const updateTasksTime =
                         })
                     );
                 }
+                dispatch(rescheduleTasksActions.reset());
             })
             .catch(() => {
                 dispatch(rescheduleTasksActions.toggleIsLoading(false));
-                dispatch(rescheduleTasksActions.toggleModalIsOpened(false));
+                dispatch(
+                    rescheduleTasksActions.setModalError("404 ОШИБКА СЕРВЕРА")
+                );
             });
     };
