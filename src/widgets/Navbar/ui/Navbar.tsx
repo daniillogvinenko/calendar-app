@@ -6,7 +6,6 @@ import { useEffect } from "react";
 import { getDateFormat } from "shared/lib/getDateFormat/getDateFormat";
 import { getMonthName } from "shared/lib/getMonthName/getMonthName";
 import { getWeekDay } from "shared/lib/getWeekDay/getWeekDay";
-import { Loader } from "shared/ui/Loader/Loader";
 import { AppLink } from "shared/ui/AppLink/AppLink";
 import { useSelector } from "react-redux";
 import {

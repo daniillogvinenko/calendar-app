@@ -38,5 +38,7 @@
     "Перенести задачи": "Reschedule tasks",
     "Перенести на": "Reschedule for",
     "ПЕРЕНЕСТИ": "RESCHEDULE",
-    "404 ОШИБКА СЕРВЕРА": "404 SERVER ERROR"
+    "404 ОШИБКА СЕРВЕРА": "404 SERVER ERROR",
+    "ПРЕВЫШЕНА МАКСИМАЛЬНАЯ ДЛИНА": "MAXIMUM LENGTH EXCEEDED",
+    "НЕПРАВИЛЬНЫЙ ФОРМАТ ВРЕМЕНИ": "INCORRECT TIME FORMAT"
 }
