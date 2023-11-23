@@ -2,10 +2,12 @@
 @import './variables/global';
 @import './themes/light';
 @import './themes/dark';
+@import './themes/custom1';
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 body {
-    background: var(--bg-color);
+    transition-duration: 0.3s;
+    background: var(--main-bg);
     font: var(--font-m);
 }
 

@@ -1,12 +1,12 @@
-.app_dark {
-    --main-bg: #000000;
+.app_custom1 {
+    --main-bg: url('https://512pixels.net/downloads/macos-wallpapers-thumbs/10-12--thumb.jpg') 0 0/cover;
     --bg-color: #000000;
-    --main-color: #E3E3E3;
+    --main-color: #fc0000;
     --main-color-accent: #FFFFFF;
     --accent-color: #F00;
 
     // header
-    --header-text: #FFF;
+    --header-text: green;
 
     //task card
     --task-card-shadow: rgba(255, 255, 255, 0.50);

@@ -19,7 +19,7 @@ import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { editTaskActions } from "../model/slices/editTaskSlice";
 import { validateAddNewTask } from "shared/lib/validation/validateAddNewTask";
 import { editTaskThunk } from "../model/services/editTaskThunk";
-import { getDateDetailsPageTasks } from "../../../pages/DateDetailsPage/model/selectors/dateDetailsPageSelectors";
+import { getDateDetailsPageTasks } from "pages/DateDetailsPage/model/selectors/dateDetailsPageSelectors";
 
 interface EditTaskProps {
     taskId: number;

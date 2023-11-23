@@ -1,6 +1,6 @@
 import { AppTheme } from "app/providers/themeProvider/lib/ThemeContext";
-import LightIcon from "../../assets/icons/LightIcon.svg";
-import DarkIcon from "../../assets/icons/DarkIcon.svg";
+import Lighticon from "../../assets/icons/Lighticon.svg";
+import Darkicon from "../../assets/icons/Darkicon.svg";
 import { useTheme } from "app/providers/themeProvider";
 import classes from "./ThemeSwitcher.module.scss";
 
@@ -9,7 +9,7 @@ export const ThemeSwitcher = () => {
 
     return (
         <div className={classes.ThemeSwitcher} onClick={toggleTheme}>
-            {theme === AppTheme.LIGHT ? <LightIcon /> : <DarkIcon />}
+            {theme === AppTheme.LIGHT ? <Lighticon /> : <Darkicon />}
         </div>
     );
 };

@@ -1,10 +1,12 @@
-.EditTask {
-    background-color: #00000000;
+.DeleteIcon {
+    width: 56px;
+    height: 56px;
+    background-color: var(--main-color);
+    border-radius: 20px;
 }
 
-.EditTask path {
-    stroke: var(--header-text);
-    fill: var(--header-text);
+.DeleteIconSvg path {
+    fill: var(--bg-color);
 }
 
 .modalHeader {
@@ -30,28 +32,6 @@
     stroke: var(--accent-color);
 }
 
-.inputContainer {
-    margin-bottom: 60px;
-}
-
-.taskInput {
-    width: 100%;
-}
-
-.timeInputs {
-    margin-top: 26px;
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
-}
-
-input {
-    padding: 5px 25px;
-    box-shadow: 2px 3px 9px 0px rgba(0, 0, 0, 0.30) inset;
-    border-radius: 52px;
-    height: 45px;
-}
-
 .buttons {
     display: flex;
     justify-content: center;
@@ -65,7 +45,7 @@ input {
     padding: 16px 32px;
 }
 
-.addNewTaskButton {
+.deleteButton {
     &:hover {
         opacity: 0.7;
     }

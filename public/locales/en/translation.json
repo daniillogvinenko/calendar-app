@@ -40,5 +40,7 @@
     "ПЕРЕНЕСТИ": "RESCHEDULE",
     "404 ОШИБКА СЕРВЕРА": "404 SERVER ERROR",
     "ПРЕВЫШЕНА МАКСИМАЛЬНАЯ ДЛИНА": "MAXIMUM LENGTH EXCEEDED",
-    "НЕПРАВИЛЬНЫЙ ФОРМАТ ВРЕМЕНИ": "INCORRECT TIME FORMAT"
+    "НЕПРАВИЛЬНЫЙ ФОРМАТ ВРЕМЕНИ": "INCORRECT TIME FORMAT",
+    "Удалить выбранные задачи?": "Delete selected tasks?",
+    "УДАЛИТЬ": "DELETE"
 }

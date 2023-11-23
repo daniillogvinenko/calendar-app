@@ -27,7 +27,7 @@
 
 .selectAllButton {
     font: var(--font-m);
-    background-color: var(--bg-color);
+    background-color: transparent;
     color: var(--header-text);
 }
 
@@ -39,17 +39,6 @@
 
 .addNewTaskButton {
     text-align: center;
-}
-
-.DeleteIcon {
-    width: 56px;
-    height: 56px;
-    background-color: var(--main-color);
-    border-radius: 20px;
-}
-
-.DeleteIconSvg path {
-    fill: var(--bg-color);
 }
 
 .buttons {

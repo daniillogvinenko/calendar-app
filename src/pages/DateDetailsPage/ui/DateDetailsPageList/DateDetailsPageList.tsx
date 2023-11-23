@@ -4,21 +4,18 @@ import {
     getDateDetailsPageTasksError,
 } from "../../model/selectors/dateDetailsPageSelectors";
 import classes from "./DateDetailsPageList.module.scss";
-import { TaskCard } from "entities/Task/ui/TaskCard/TaskCard";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { AddNewTask } from "features/addNewTask";
-import DeleteIcon from "shared/assets/icons/DeleteIcon.svg";
-import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { deleteTasks } from "../../model/services/deleteTasks/deleteTasks";
 import { RescheduleTasks } from "features/rescheduleTasks";
+import { TaskCard } from "entities/Task";
+import { DeleteTasks } from "features/deleteTasks";
 
 export const DateDetailsPageList = () => {
     const { t } = useTranslation();
     const tasks = useSelector(getDateDetailsPageTasks);
     const tasksError = useSelector(getDateDetailsPageTasksError);
     const [selectedTasks, setSelectedTasks] = useState<number[]>([]);
-    const dispatch = useAppDispatch();
 
     if (tasksError) {
         return (
@@ -49,10 +46,6 @@ export const DateDetailsPageList = () => {
         setSelectedTasks([]);
     };
 
-    const onDeleteSelected = () => {
-        dispatch(deleteTasks(selectedTasks));
-    };
-
     return (
         <div className={classes.DateDetailsPageList}>
             {tasks.map((task) => {
@@ -75,12 +68,7 @@ export const DateDetailsPageList = () => {
                             {t("Отменить")}
                         </button>
                         <div className={classes.buttons}>
-                            <button
-                                onClick={onDeleteSelected}
-                                className={classes.DeleteIcon}
-                            >
-                                <DeleteIcon className={classes.DeleteIconSvg} />
-                            </button>
+                            <DeleteTasks selectedTasks={selectedTasks} />
                             <RescheduleTasks
                                 selectedTasks={selectedTasks}
                                 tasks={tasks}

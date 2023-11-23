@@ -1,11 +1,12 @@
 import { type AppDispatch } from "app/providers/storeProvider/config/store";
 // import { mainPageActions } from "../../slices/mainPageSlice";
 import axios from "axios";
-import { dateDetailsPageActions } from "../../slices/dateDetailsPageSlice";
+import { dateDetailsPageActions } from "pages/DateDetailsPage/model/slices/dateDetailsPageSlice";
+import { deleteTasksActions } from "../../slices/deleteTasksSlice";
 
 export function deleteTasks(ids: number[]) {
     return (dispatch: AppDispatch) => {
-        dispatch(dateDetailsPageActions.setTasksIsLoading(true));
+        dispatch(deleteTasksActions.toggleIsLoading(true));
         const promises = [];
         for (let i = 0; i < ids.length; i++) {
             promises.push(
@@ -14,11 +15,13 @@ export function deleteTasks(ids: number[]) {
         }
         Promise.all(promises)
             .then(() => {
-                dispatch(dateDetailsPageActions.setTasksIsLoading(false));
+                dispatch(deleteTasksActions.toggleIsLoading(false));
+                dispatch(deleteTasksActions.toggleModalIsOpened(false));
                 dispatch(dateDetailsPageActions.removeTasks(ids));
             })
             .catch(() => {
-                dispatch(dateDetailsPageActions.setTasksIsLoading(false));
+                dispatch(deleteTasksActions.toggleIsLoading(false));
+                dispatch(deleteTasksActions.toggleModalIsOpened(false));
             });
     };
 }
