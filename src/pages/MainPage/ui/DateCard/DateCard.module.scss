@@ -8,3 +8,9 @@
     border-radius: 52px;
     margin-bottom: 21px;
 }
+
+.today {
+    outline: 2px solid var(--accent-color);
+    background: var(--main-color-accent);
+    box-shadow: 0 4px 9px 0 var(--task-card-shadow);
+}

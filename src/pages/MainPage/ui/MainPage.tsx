@@ -13,6 +13,11 @@ import {
 import "shared/styles/splide.scss";
 import { DateCard } from "./DateCard/DateCard";
 import { Skeleton } from "shared/ui/Skeleton/Skeleton";
+import {
+    getNavbarDay,
+    getNavbarMonth,
+    getNavbarYear,
+} from "widgets/Navbar/model/selectors/navbarSelectors";
 
 export const MainPage = () => {
     const dispatch = useAppDispatch();
@@ -20,10 +25,14 @@ export const MainPage = () => {
     const isLoading = useSelector(getMainPageIsLoading);
     const error = useSelector(getMainPageError);
     const { t } = useTranslation();
+    const currentDay = useSelector(getNavbarDay);
+    const currentMonth = useSelector(getNavbarMonth);
+    const currentYear = useSelector(getNavbarYear);
 
     useEffect(() => {
-        dispatch(fetchAllDates);
-    }, [dispatch]);
+        // eslint-disable-next-line @typescript-eslint/no-floating-promises
+        dispatch(fetchAllDates(currentDay, currentMonth, currentYear));
+    }, [dispatch, currentDay, currentMonth, currentYear]);
 
     if (isLoading) {
         // if (1) {
@@ -135,6 +144,7 @@ export const MainPage = () => {
             <div className={classes.MainPage}>
                 <Splide
                     options={{
+                        rewindByDrag: true,
                         direction: "ttb",
                         pagination: false,
                         autoHeight: true,
@@ -145,7 +155,10 @@ export const MainPage = () => {
                 >
                     {dates.map((date) => (
                         <SplideSlide key={date.id}>
-                            <DateCard date={date} />
+                            <DateCard
+                                date={date}
+                                today={currentDay === +date.dateDay}
+                            />
                         </SplideSlide>
                     ))}
                 </Splide>

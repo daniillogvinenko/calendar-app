@@ -26,14 +26,22 @@
 }
 
 .selectAllButton {
+    &:hover {
+        opacity: 0.7;
+    }
+
     font: var(--font-m);
     background-color: transparent;
     color: var(--header-text);
 }
 
 .cancelSelection {
+    &:hover {
+        opacity: 0.7;
+    }
+
     font: var(--font-m);
-    background-color: var(--bg-color);
+    background-color: transparent;
     color: var(--header-text);
 }
 

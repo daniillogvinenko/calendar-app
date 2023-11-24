@@ -17,17 +17,6 @@ export const useTheme = () => {
             case AppTheme.DARK:
                 newTheme = AppTheme.LIGHT;
                 break;
-
-            // case AppTheme.LIGHT:
-            //     newTheme = AppTheme.DARK;
-            //     break;
-            // case AppTheme.DARK:
-            //     newTheme = AppTheme.CUSTOM1;
-            //     break;
-            // case AppTheme.CUSTOM1:
-            //     newTheme = AppTheme.LIGHT;
-            //     break;
-
             default:
                 newTheme = AppTheme.LIGHT;
                 break;

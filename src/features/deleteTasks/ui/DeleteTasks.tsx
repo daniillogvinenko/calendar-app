@@ -32,6 +32,7 @@ export const DeleteTasks = ({ selectedTasks }: DeleteTasksProps) => {
 
     const onCloseModal = () => {
         dispatch(deleteTasksActions.toggleModalIsOpened(false));
+        deleteTasksActions.setModalError("");
     };
 
     const onDelete = () => {

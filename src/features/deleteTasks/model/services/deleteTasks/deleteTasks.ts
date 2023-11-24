@@ -21,7 +21,9 @@ export function deleteTasks(ids: number[]) {
             })
             .catch(() => {
                 dispatch(deleteTasksActions.toggleIsLoading(false));
-                dispatch(deleteTasksActions.toggleModalIsOpened(false));
+                dispatch(
+                    deleteTasksActions.setModalError("404 ОШИБКА СЕРВЕРА")
+                );
             });
     };
 }

@@ -1,5 +1,9 @@
 .EditTask {
     background-color: #00000000;
+
+    &:hover {
+        opacity: 0.7;
+    }
 }
 
 .EditTask path {

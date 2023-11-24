@@ -1,76 +1,82 @@
 {
   "dates": [
     {
-      "id": 81,
-      "dateDay": "30",
+      "id": 88,
+      "dateDay": "23",
+      "dateMonth": "10",
+      "dateYear": "2023",
+      "dateWeekday": "4"
+    },
+    {
+      "id": 89,
+      "dateDay": "24",
+      "dateMonth": "10",
+      "dateYear": "2023",
+      "dateWeekday": "5"
+    },
+    {
+      "id": 90,
+      "dateDay": "25",
+      "dateMonth": "10",
+      "dateYear": "2023",
+      "dateWeekday": "6"
+    },
+    {
+      "id": 91,
+      "dateDay": "26",
+      "dateMonth": "10",
+      "dateYear": "2023",
+      "dateWeekday": "0"
+    },
+    {
+      "id": 92,
+      "dateDay": "27",
       "dateMonth": "10",
       "dateYear": "2023",
       "dateWeekday": "1"
     },
     {
-      "id": 82,
-      "dateDay": "31",
+      "id": 93,
+      "dateDay": "28",
       "dateMonth": "10",
       "dateYear": "2023",
       "dateWeekday": "2"
     },
     {
-      "id": 83,
-      "dateDay": "1",
-      "dateMonth": "11",
+      "id": 94,
+      "dateDay": "29",
+      "dateMonth": "10",
       "dateYear": "2023",
       "dateWeekday": "3"
     },
     {
-      "id": 84,
-      "dateDay": "2",
-      "dateMonth": "11",
+      "id": 95,
+      "dateDay": "30",
+      "dateMonth": "10",
       "dateYear": "2023",
       "dateWeekday": "4"
     },
     {
-      "id": 85,
-      "dateDay": "3",
+      "id": 96,
+      "dateDay": "1",
       "dateMonth": "11",
       "dateYear": "2023",
       "dateWeekday": "5"
     },
     {
-      "id": 86,
-      "dateDay": "4",
+      "id": 97,
+      "dateDay": "2",
       "dateMonth": "11",
       "dateYear": "2023",
       "dateWeekday": "6"
     },
     {
-      "id": 87,
-      "dateDay": "5",
+      "id": 98,
+      "dateDay": "3",
       "dateMonth": "11",
       "dateYear": "2023",
       "dateWeekday": "0"
-    },
-    {
-      "id": 88,
-      "dateDay": "6",
-      "dateMonth": "11",
-      "dateYear": "2023",
-      "dateWeekday": "1"
-    },
-    {
-      "id": 89,
-      "dateDay": "7",
-      "dateMonth": "11",
-      "dateYear": "2023",
-      "dateWeekday": "2"
     }
   ],
-  "tasks": [
-    {
-      "taskText": "ujfgkjdk",
-      "taskTimeFrom": "11:00",
-      "taskTimeTo": "12:00",
-      "dateId": 81,
-      "id": 1
-    }
-  ]
+  "tasks": []
 }

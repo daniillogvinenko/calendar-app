@@ -19,7 +19,6 @@ import {
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { navbarActions } from "../model/slices/navbarSlice";
 
-console.log("here");
 export const Navbar = () => {
     const { t, i18n } = useTranslation();
 
