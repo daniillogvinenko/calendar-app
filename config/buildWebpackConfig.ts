@@ -6,6 +6,7 @@ import { buildLoaders } from "./buildLoaders";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 import CircularDependencyPlugin from "circular-dependency-plugin";
 import type { buildConfigOptions } from "./types/types";
+import CopyWebpackPlugin from "copy-webpack-plugin";
 
 export const buildWebpackConfig = ({
     paths,
@@ -33,6 +34,9 @@ export const buildWebpackConfig = ({
             alias: {},
         },
         plugins: [
+            new CopyWebpackPlugin({
+                patterns: [{ from: paths.locales, to: paths.buildLocales }],
+            }),
             new HtmlWebpackPlugin({
                 template: paths.htmlWebpackPlugin,
             }),

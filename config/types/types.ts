@@ -16,4 +16,6 @@ export interface buildConfigPaths {
     output: string;
     htmlWebpackPlugin: string;
     src: string;
+    locales: string;
+    buildLocales: string;
 }
