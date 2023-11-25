@@ -9,9 +9,7 @@ export function deleteTasks(ids: number[]) {
         dispatch(deleteTasksActions.toggleIsLoading(true));
         const promises = [];
         for (let i = 0; i < ids.length; i++) {
-            promises.push(
-                axios.delete(`http://localhost:8000/tasks/${ids[i]}`)
-            );
+            promises.push(axios.delete(`${_API_}tasks/${ids[i]}`));
         }
         Promise.all(promises)
             .then(() => {

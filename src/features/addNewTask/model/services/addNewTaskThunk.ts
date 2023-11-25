@@ -11,7 +11,7 @@ export const addNewTaskThunk =
         dispatch(addNewTaskActions.toggleIsLoading(true));
 
         axios
-            .post<TaskSchema>("http://localhost:8000/tasks", {
+            .post<TaskSchema>(`${_API_}tasks`, {
                 taskText: newTask.taskText,
                 taskTimeFrom: newTask.taskTimeFrom,
                 taskTimeTo: newTask.taskTimeTo,

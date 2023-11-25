@@ -45,6 +45,12 @@ export const buildWebpackConfig = ({
             // }),
             new webpack.DefinePlugin({
                 _IS_DEV_: Boolean(mode === "development"),
+                _API_:
+                    mode === "production"
+                        ? JSON.stringify(
+                              "https://calendar-app-backend-two.vercel.app/"
+                          )
+                        : JSON.stringify("http://localhost:8000/"),
             }),
             new webpack.ProgressPlugin(),
             new ForkTsCheckerWebpackPlugin({

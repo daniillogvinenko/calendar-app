@@ -8,7 +8,7 @@ export function fetchDateById(id: number) {
     return (dispatch: AppDispatch) => {
         dispatch(dateDetailsPageActions.setDateIsLoading(true));
         axios
-            .get<DateSchema>(`http://localhost:8000/dates/${id}`)
+            .get<DateSchema>(`${_API_}dates/${id}`)
             .then((response) => {
                 dispatch(dateDetailsPageActions.setDate(response.data));
                 dispatch(dateDetailsPageActions.setDateIsLoading(false));

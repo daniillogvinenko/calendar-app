@@ -10,7 +10,7 @@ export const editTaskThunk =
     (dispatch: AppDispatch) => {
         dispatch(editTaskActions.toggleIsLoading(true));
         axios
-            .patch(`http://localhost:8000/tasks/${taskId}`, {
+            .patch(`${_API_}tasks/${taskId}`, {
                 taskText: newTask.taskText,
                 taskTimeFrom: newTask.taskTimeFrom,
                 taskTimeTo: newTask.taskTimeTo,

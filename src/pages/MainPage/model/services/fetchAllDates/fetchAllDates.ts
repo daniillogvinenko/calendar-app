@@ -12,7 +12,7 @@ export const fetchAllDates =
 
         try {
             const response = await axios.get<DateSchema[]>(
-                `http://localhost:8000/dates?dateDay=${day}&dateMonth=${month}&dateYear=${year}`
+                `${_API_}dates?dateDay=${day}&dateMonth=${month}&dateYear=${year}`
             );
             const data = response.data[0];
 
@@ -20,39 +20,25 @@ export const fetchAllDates =
                 // подгружаются даты начиная со вчерашнего дня, до +5 от сегодняшнего
                 const promises = [];
                 promises.push(
-                    axios.get<DateSchema>(
-                        `http://localhost:8000/dates/${data?.id - 1}`
-                    )
+                    axios.get<DateSchema>(`${_API_}dates/${data?.id - 1}`)
                 );
                 promises.push(
-                    axios.get<DateSchema>(
-                        `http://localhost:8000/dates/${data?.id}`
-                    )
+                    axios.get<DateSchema>(`${_API_}dates/${data?.id}`)
                 );
                 promises.push(
-                    axios.get<DateSchema>(
-                        `http://localhost:8000/dates/${data?.id + 1}`
-                    )
+                    axios.get<DateSchema>(`${_API_}dates/${data?.id + 1}`)
                 );
                 promises.push(
-                    axios.get<DateSchema>(
-                        `http://localhost:8000/dates/${data?.id + 2}`
-                    )
+                    axios.get<DateSchema>(`${_API_}dates/${data?.id + 2}`)
                 );
                 promises.push(
-                    axios.get<DateSchema>(
-                        `http://localhost:8000/dates/${data?.id + 3}`
-                    )
+                    axios.get<DateSchema>(`${_API_}dates/${data?.id + 3}`)
                 );
                 promises.push(
-                    axios.get<DateSchema>(
-                        `http://localhost:8000/dates/${data?.id + 4}`
-                    )
+                    axios.get<DateSchema>(`${_API_}dates/${data?.id + 4}`)
                 );
                 promises.push(
-                    axios.get<DateSchema>(
-                        `http://localhost:8000/dates/${data?.id + 5}`
-                    )
+                    axios.get<DateSchema>(`${_API_}dates/${data?.id + 5}`)
                 );
 
                 Promise.all(promises)

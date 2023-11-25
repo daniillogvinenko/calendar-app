@@ -19,7 +19,7 @@ export const updateTasksTime =
             const task = tasks[index];
 
             promises.push(
-                axios.patch(`http://localhost:8000/tasks/${selectedTasks[i]}`, {
+                axios.patch(`${_API_}tasks/${selectedTasks[i]}`, {
                     taskTimeFrom: calcRescheduleTime(task.taskTimeFrom, time),
                     taskTimeTo: calcRescheduleTime(task.taskTimeTo, time),
                 })
