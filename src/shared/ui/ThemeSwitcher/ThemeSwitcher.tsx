@@ -1,6 +1,6 @@
 import { AppTheme } from "app/providers/themeProvider/lib/ThemeContext";
-import Lighticon from "../../assets/icons/Lighticon.svg";
-import Darkicon from "../../assets/icons/Darkicon.svg";
+import Lighticon from "../../assets/icons/LightIcon.svg";
+import Darkicon from "../../assets/icons/DarkIcon.svg";
 import { useTheme } from "app/providers/themeProvider";
 import classes from "./ThemeSwitcher.module.scss";
 
